@@ -34,3 +34,25 @@ $(function() {
         element.addClass('active');
     }
 });
+
+$(function() {
+    $('.toggle-nav').click(function() {
+        // Calling a function in case you want to expand upon this.
+        toggleNav();
+    });
+});
+
+/*========================================
+=            CUSTOM FUNCTIONS            =
+========================================*/
+function toggleNav() {
+    if ($('#menu-wrapper').hasClass('show-nav')) {
+        // Do things on Nav Close
+        $('#menu-wrapper').removeClass('show-nav');
+    } else {
+        // Do things on Nav Open
+        $('#menu-wrapper').addClass('show-nav');
+    }
+
+    //$('#wrapper').toggleClass('show-nav');
+}
