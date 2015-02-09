@@ -1,0 +1,13 @@
+{
+  "name": "afghansurveydata",
+  "version": "0.0.0",
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "d3": "~3.5.3",
+    "datatables": "~1.10.4",
+    "nvd3": "~1.7.1",
+    "metisMenu": "~1.1.3",
+    "font-awesome": "~4.3.0",
+    "morrisjs": "~0.5.1"
+  }
+}
