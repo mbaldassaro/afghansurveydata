@@ -12,7 +12,7 @@ author:
 
 # Grunt handles images and assets.
 exclude: ['y', 'y', 'y', 'y',
-          '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
+          '**.gif', '**.webp']
 
 include: ['.htaccess']
 
