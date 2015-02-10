@@ -26,7 +26,9 @@ body {
     padding: 0 15px;
     min-height: 568px;
     background-color: #fff;
-      
+    background-image: url(../img/AfSurvBackground.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;    
 }
 
 #template {
@@ -35,7 +37,6 @@ body {
     margin-left: -33px;
     opacity: 0.6;
 }
-
 
 #menu-wrapper {
     width: 100%;
