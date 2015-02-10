@@ -17,6 +17,15 @@ body {
     font-family: Lato; 
 }
 
+a, h4 { 
+    color: #afafaf;
+    font-weight: 100;
+}
+
+b, strong {
+    font-weight: 100;
+}
+
 #wrapper {
     width: 100%;
      
@@ -30,6 +39,11 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;    
 }
+
+#page-header {
+    font-weight: 100;
+}
+
 
 #template {
     min-height: 568px;
@@ -64,7 +78,9 @@ body {
     position: absolute;
     top: 0;
     left: -1000px;
-    background-color: lightblue;
+    background-color: #005288;
+    color: #afafaf;
+    font-weight: 100; 
     padding: 5px; 
 }
 /*end added*/
@@ -100,7 +116,7 @@ background-color: #000;
 
 .navbar-top-links {
     margin-right: 0;
-    background-color: #000;
+    background-color: #00;
 }
 
 .navbar-top-links li {
@@ -117,7 +133,7 @@ background-color: #000;
 }
 
 .navbar-top-links li a:hover {
-    background-color: lightblue;
+    background-color: #0096d6;
 }
 
 .navbar-top-links .dropdown-menu li {
@@ -169,6 +185,7 @@ background-color: #000;
     padding-right: 0;
     padding-left: 0;
     background-color: #000;
+    color: #e7e7e7;
 }
 
 .sidebar .sidebar-search {
@@ -180,11 +197,13 @@ background-color: #000;
 }
 
 .sidebar ul li a:hover {
-    background-color: lightblue;
+    background-color: #0096d6;
+    color: #efefef;
 }
 
 .sidebar ul li a.active {
-    background-color: lightblue;
+    background-color: #005288;
+    color: #efefef;
 }
 
 .sidebar .arrow {
