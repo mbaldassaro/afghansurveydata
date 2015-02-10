@@ -154,6 +154,10 @@ background-color: #000;
     left: auto;
 }
 
+.navbar-static-top {
+    border-width: 0 0 0px!important;
+}
+
 .sidebar .sidebar-nav.navbar-collapse {
     padding-right: 0;
     padding-left: 0;
@@ -206,7 +210,7 @@ background-color: #000;
         z-index: 1;
         position: absolute;
         width: 250px;
-        margin-top: 51px;
+        margin-top: 0px;
     }
 
     .navbar-top-links .dropdown-messages,
