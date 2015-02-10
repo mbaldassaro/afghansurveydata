@@ -19,9 +19,7 @@ body {
 
 #wrapper {
     width: 100%;
-     /*added*/
-    
-    /*end added*/
+     
 }
 
 #page-wrapper {
@@ -30,6 +28,14 @@ body {
     background-color: #fff;
       
 }
+
+#template {
+    min-height: 568px;
+    width: 106%;
+    margin-left: -33px;
+    opacity: 0.6;
+}
+
 
 #menu-wrapper {
     width: 100%;
