@@ -9,47 +9,39 @@
 
     <!-- Bootstrap CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- MetisMenu CSS -->
     <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-
     <!-- FontAwesome CSS -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
     <!-- build:css(app) /dist/main.css -->
     <link rel="stylesheet" href="../dist/main.css">
-
     <!-- Custom CSS -->
-    
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">   
-    
     <!-- Maps CSS - Leaflet -->
-
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css">
-
     <!-- Main.JS Custom Template for Bootstrap Navbar -->
-
     <script src="../dist/main.js"></script>
-
     <!-- JQUERY -->
-
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <!--<script src="../bower components/bootstrap/dist/js/bootstrap.min.js"></script>-->
-
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
     <!-- D3 + NVD3 Libraries -->
 
-    <link href="../bower_components/nvd3/build/nv.d3.css" rel="stylesheet" type="text/css">
-    
+    <link href="../bower_components/nvd3/build/nv.d3.min.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
-  
     <script src="../bower_components/nvd3/build/nv.d3.js"></script>
-
     <script src="../bower_components/nvd3/src/stream_layers.js"></script>
+    <!--<script src="../bower_components/nvd3/src/utils.js"></script>
+    <script src="../bower_components/nvd3/src/tooltip.js"></script>
+    <script src="../bower_components/nvd3/src/models/legend.js"></script>
+    <script src="../bower_components/nvd3/src/models/axis.js"></script>
+    <script src="../bower_components/nvd3/src/models/multiBarHorizontal.js"></script>
+    <script src="../bower_components/nvd3/src/models/multiBarHorizontalChart.js"></script>
+    <script src="../bower_components/nvd3/src/models/multiBarChart.js"></script>
+    <script src="../bower_components/nvd3/src/models/multiBar.js"></script>-->
+    
 
     
 
@@ -315,9 +307,22 @@
             display: block;
             float: left;
             height: 500px;
-            width: 500px;
+            width: 1000px;
         }
  
+
+        /*#chart1 {
+            margin: 30px;
+            min-width: 100px;
+            min-height: 100px;
+            }
+/*
+  Minimum height and width is a good idea to prevent negative SVG dimensions...
+  For example width should be =< margin.left + margin.right + 1,
+  of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
+*/
+
+
 </style>
 
     <div id="wrapper">
@@ -331,7 +336,7 @@
             </div>
                     
                      <svg id="chart1" class="with-3d-shadow with-transitions"></svg>
-                     <svg id="chart2" class="with-3d-shadow with-transitions"></svg>   
+   
 
                 <div id="menu-wrapper">
                     <div id="menu-canvas">
@@ -354,82 +359,300 @@
 
     <script>
    
-    var testdata = [
-        {key: "One", y: 5},
-        {key: "Two", y: 2},
-        {key: "Three", y: 9},
-        {key: "Four", y: 7},
-        {key: "Five", y: 4},
-        {key: "Six", y: 3},
-        {key: "Seven", y: 0.5}
-    ];
-    var testdata2 = [
-        {key: "One", y: 5},
-        {key: "Two", y: 2},
-        {key: "Three", y: 9},
-        {key: "Four", y: 7},
-        {key: "Five", y: 4},
-        {key: "Six", y: 3},
-        {key: "Seven", y: 0.5}
-    ];
-    var height = 500;
-    var width = 500;
+    var success = [
+    {
+        "key": "Provision of Education",
+        "values": [
+            {
+                "label": "Biggest Success",
+                "value": 26.8
+            },
+            {
+                "label": "Second Biggest Success",
+                "value": 13.7
+            }
+        ]
+    },
+    {
+        "key": "Peace & Security",
+        "values": [
+            {
+                "label": "Biggest Success",
+                "value": 15.2
+            },
+            {
+                "label": "Second Biggest Success",
+                "value": 6.6
+            }
+        ]
+    },
+    {
+        "key": "Paved Roads",
+        "values": [
+            {
+                "label": "Biggest Success",
+                "value": 11.5
+            },
+            {
+                "label": "Second Biggest Success",
+                "value": 15.6
+            }
+        ]
+    },
+    {
+        "key": "Rule of Law",
+        "values": [
+            {
+                "label": "Biggest Success",
+                "value": 7.9
+            },
+            {
+                "label": "Second Biggest Success",
+                "value": 3.5
+            }
+        ]
+    },
+    {
+        "key": "Powerful Government",
+        "values": [
+            {
+                "label": "Biggest Success",
+                "value": 6.7
+            },
+            {
+                "label": "Second Biggest Success",
+                "value": 1.6
+            }
+        ]
+    },
+    {
+        "key": "Potable Water",
+        "values": [
+            {
+                "label": "Biggest Success",
+                "value": 5.6
+            },
+            {
+                "label": "Second Biggest Success",
+                "value": 5.2
+            }
+        ]
+    },
+    {
+        "key": "Economic Improvement",
+        "values": [
+            {
+                "label": "Biggest Success",
+                "value": 5.6
+            },
+            {
+                "label": "Second Biggest Success",
+                "value": 8.1
+            }
+        ]
+    },
+    {
+        "key": "National Unity Government",
+        "values": [
+            {
+                "label": "Biggest Success",
+                "value": 4.9
+            },
+            {
+                "label": "Second Biggest Success",
+                "value": 9.8
+            }
+        ]
+    },
+    {
+        "key": "Health Care Services",
+        "values": [
+            {
+                "label": "Biggest Success",
+                "value": 4.7
+            },
+            {
+                "label": "Second Biggest Success",
+                "value": 9.8
+            }
+        ]
+    },
+    {
+        "key": "Electricity",
+        "values": [
+            {
+                "label": "Biggest Success",
+                "value": 3.5
+            },
+            {
+                "label": "Second Biggest Success",
+                "value": 7.0
+            }
+        ]
+    },
+    {       
+        "key": "Democracy",
+        "values": [
+            {
+                "label": "Biggest Success",
+                "value": 2.8
+            },
+            {
+                "label": "Second Biggest Success",
+                "value": 4.7
+            }
+        ]
+        },
+        {
+        "key": "Don't Know",
+        "values": [
+            {
+                "label": "Biggest Success",
+                "value": 1.8
+            },
+            {
+                "label": "Second Biggest Success",
+                "value": 3.0
+            }
+        ]
+        },
+        {
+        "key": "Low Crime Rate",
+        "values": [
+            {
+                "label": "Biggest Success",
+                "value": 1.6
+            },
+            {
+                "label": "Second Biggest Success",
+                "value": 4.5
+            }
+        ]
+        },
+        {
+        "key": "Employment",
+        "values": [
+            {
+                "label": "Biggest Success",
+                "value": 1.5
+            },
+            {
+                "label": "Second Biggest Success",
+                "value": 5.5
+            }
+        ]
+    }
+]
+
+
+var chart;
+    nv.addGraph(function() {
+        chart = nv.models.multiBarChart()
+            .x(function(d) { return d.label })
+            .y(function(d) { return d.value / 100 })
+            //.barColor(d3.scale.category10().range())
+            .duration(250)
+            //.growOnHover(true)
+            //.stacked(true);
+        chart.yAxis.tickFormat(d3.format('%'));
+        d3.select('#chart1')
+            .datum(success)
+            .transition().duration(1200)
+            .call(chart);
+        nv.utils.windowResize(chart.update);
+        chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+        chart.state.dispatch.on('change', function(state){
+            nv.log('state', JSON.stringify(state));
+        });
+        return chart;
+    });
+
+
+/*
+    var height = 400;
+    var width = 800;
+
+    
+nv.addGraph(function() {
+        var chart = nv.models.multiBarChart()
+      .x(function(d) { return d.x })
+      .y(function(d) { return d.y }) // / 100
+      //.margin({top: 30, right: 20, bottom: 50, left: 75})
+      .growOnHover(true)
+      .width(width)
+      .height(height)
+      //.showValues(false)
+      //.tooltips(true)
+      .barColor(d3.scale.category10().range()); 
+      //.stacked(true)
+      //.showControls(false);
+
+    chart.yAxis.tickFormat(d3.format('%'));           
+     
+  d3.select("#chart1")
+      .datum(success1)
+      .transition().duration(1200)
+      //.attr('width', width)
+      //.attr('height', height)
+      .call(chart);
+  
+  //chart.xAxis
+    //.tickFormat(d3.format('d'));
+
+
+  nv.utils.windowResize(chart.update);
+
+  chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+  chart.state.dispatch.on('change', function(state){
+            nv.log('state', JSON.stringify(state));
+        });
+
+  return chart;
+});
+
+*/
+/*
 
     nv.addGraph(function() {
         var chart = nv.models.pieChart()
-            .x(function(d) { return d.key })
+            .x(function(d) { return d.x })
             .y(function(d) { return d.y })
+            //.color(d3.scale.category20().range().slice(8))
+            .growOnHover(true)
             .width(width)
             .height(height);
         d3.select("#chart1")
-            .datum(testdata2)
-            //.transition().duration(1200)
+            .datum(success1)
+            .transition().duration(1200)
             .attr('width', width)
             .attr('height', height)
             .call(chart);
-        // update chart data values randomly
-        setInterval(function() {
-            testdata2[0].y = Math.floor(Math.random() * 10);
-            testdata2[1].y = Math.floor(Math.random() * 10);
-            chart.update();
-        }, 4000);
         return chart;
     });
-    nv.addGraph(function() {
+    
+     nv.addGraph(function() {
         var chart = nv.models.pieChart()
-            .x(function(d) { return d.key })
+            .x(function(d) { return d.x })
             .y(function(d) { return d.y })
-            //.labelThreshold(.08)
-            //.showLabels(false)
             .color(d3.scale.category20().range().slice(8))
-            .growOnHover(false)
+            .growOnHover(true)
             .tooltipContent(function(key, y, e, graph) {
-                return '<h3 style="padding: 5px; background-color: '
-                        + e.color + '"><strong>Yo, the value is</strong></h3>'
-                        + '<p style="padding:5px;">' +  y + '</p>';
+              return '<h5 style="padding: 5px; background-color: '
+                        + e.color + x + '<h5 style="padding:5px;>' +  y + '</h5>';
             })
             .width(width)
             .height(height);
-        // make it a half circle
-        chart.pie
-            .startAngle(function(d) { return d.startAngle/2 -Math.PI/2 })
-            .endAngle(function(d) { return d.endAngle/2 -Math.PI/2 });
-        // MAKES LABELS OUTSIDE OF DONUT
-        //chart.pie.donutLabelsOutside(true).donut(true);
         d3.select("#chart2")
-            .datum(testdata)
-            //.transition().duration(1200)
+            .datum(success2)
+            .transition().duration(1200)
             .attr('width', width)
             .attr('height', height)
             .call(chart);
-        // disable and enable some of the sections
-        var is_disabled = false;
-        setInterval(function() {
-            chart.dispatch.changeState({disabled: {2: !is_disabled, 4: !is_disabled}});
-            is_disabled = !is_disabled;
-        }, 3000);
         return chart;
     });
+
+*/
 </script>
 	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
