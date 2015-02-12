@@ -304,37 +304,26 @@
             </div> 
 
 
-<!--General Issues - Biggest Successes Over the Past Ten Years -->
 
+<!--General Issues - Direction of the Country -->
 <style>
-      
-        svg {
+
+svg {
             display: block;
             float: left;
             height: 500px;
-            width: 1000px;
+            width: 1050px;
         } 
-
-        /*#chart1 {
-            margin: 30px;
-            min-width: 100px;
-            min-height: 100px;
-            }
-/*
-  Minimum height and width is a good idea to prevent negative SVG dimensions...
-  For example width should be =< margin.left + margin.right + 1,
-  of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
-*/
 
 
 </style>
 
-    <div id="wrapper">
+<div id="wrapper">
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     
-                    <h1 class="page-header"><strong>BIGGEST SUCCESSES OVER THE PAST 10 YEARS</strong></h1>
+                    <h1 class="page-header"><strong>DIRECTION OF THE COUNTRY</strong></h1>
 
                 </div>
             </div>
@@ -361,261 +350,114 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-    <script>
-   
-    var success = [
+<script>
+
+
+var data = [
     {
-        "key": "Provision of Education",
+        "key": "Wrong Direction",
+        "color": "#d62728",
         "values": [
-            {
-                "label": "Biggest Success",
-                "value": 26.8
-            },
-            {
-                "label": "Second Biggest Success",
-                "value": 13.7
-            }
+            [
+                1351728000000,
+                32.0
+            ],
+            [
+                1385856000000,
+                20.6
+            ],
+            [
+            	1412800000000,
+            	12.4
+            ]
         ]
     },
     {
-        "key": "Peace & Security",
+        "key": "Right Direction",
+        "color": "#1f77b4",
         "values": [
-            {
-                "label": "Biggest Success",
-                "value": 15.2
-            },
-            {
-                "label": "Second Biggest Success",
-                "value": 6.6
-            }
+            [
+                1351728000000,
+                32.8
+            ],
+            [
+                1385856000000,
+                33.1
+            ],
+            [
+            	1412800000000,
+            	48.1
+            ]
         ]
     },
     {
-        "key": "Paved Roads",
+        "key": "Some Right / Some Wrong",
+        "color": "purple",
         "values": [
-            {
-                "label": "Biggest Success",
-                "value": 11.5
-            },
-            {
-                "label": "Second Biggest Success",
-                "value": 15.6
-            }
+            [
+                1351728000000,
+                15.7
+            ],
+            [
+                1385856000000,
+                33.8
+            ],
+            [
+            	1412800000000,
+            	33.5
+            ]
         ]
     },
     {
-        "key": "Rule of Law",
-        "values": [
-            {
-                "label": "Biggest Success",
-                "value": 7.9
-            },
-            {
-                "label": "Second Biggest Success",
-                "value": 3.5
-            }
-        ]
-    },
-    {
-        "key": "Powerful Government",
-        "values": [
-            {
-                "label": "Biggest Success",
-                "value": 6.7
-            },
-            {
-                "label": "Second Biggest Success",
-                "value": 1.6
-            }
-        ]
-    },
-    {
-        "key": "Potable Water",
-        "values": [
-            {
-                "label": "Biggest Success",
-                "value": 5.6
-            },
-            {
-                "label": "Second Biggest Success",
-                "value": 5.2
-            }
-        ]
-    },
-    {
-        "key": "Economic Improvement",
-        "values": [
-            {
-                "label": "Biggest Success",
-                "value": 5.6
-            },
-            {
-                "label": "Second Biggest Success",
-                "value": 8.1
-            }
-        ]
-    },
-    {
-        "key": "National Unity Government",
-        "values": [
-            {
-                "label": "Biggest Success",
-                "value": 4.9
-            },
-            {
-                "label": "Second Biggest Success",
-                "value": 9.8
-            }
-        ]
-    },
-    {
-        "key": "Health Care Services",
-        "values": [
-            {
-                "label": "Biggest Success",
-                "value": 4.7
-            },
-            {
-                "label": "Second Biggest Success",
-                "value": 9.8
-            }
-        ]
-    },
-    {
-        "key": "Electricity",
-        "values": [
-            {
-                "label": "Biggest Success",
-                "value": 3.5
-            },
-            {
-                "label": "Second Biggest Success",
-                "value": 7.0
-            }
-        ]
-    },
-    {       
-        "key": "Democracy",
-        "values": [
-            {
-                "label": "Biggest Success",
-                "value": 2.8
-            },
-            {
-                "label": "Second Biggest Success",
-                "value": 4.7
-            }
-        ]
-        },
-        {
         "key": "Don't Know",
+        "color": "green",
         "values": [
-            {
-                "label": "Biggest Success",
-                "value": 1.8
-            },
-            {
-                "label": "Second Biggest Success",
-                "value": 3.0
-            }
-        ]
-        },
-        {
-        "key": "Low Crime Rate",
-        "values": [
-            {
-                "label": "Biggest Success",
-                "value": 1.6
-            },
-            {
-                "label": "Second Biggest Success",
-                "value": 4.5
-            }
-        ]
-        },
-        {
-        "key": "Employment",
-        "values": [
-            {
-                "label": "Biggest Success",
-                "value": 1.5
-            },
-            {
-                "label": "Second Biggest Success",
-                "value": 5.5
-            }
+            [
+                1351728000000,
+                13.0
+            ],
+            [
+                1385856000000,
+                12.1
+            ],
+            [
+            	1412800000000,
+            	5.8
+            ]
         ]
     }
 ]
 
+	var width = 1000; 
 
-var chart;
-    nv.addGraph(function() {
-        chart = nv.models.multiBarChart()
-            .x(function(d) { return d.label })
-            .y(function(d) { return d.value / 100 })
-            //.barColor(d3.scale.category10().range())
-            .duration(250)
-            //.growOnHover(true)
-            //.stacked(true);
-            
-        chart.yAxis.tickFormat(d3.format('%'));
+  nv.addGraph(function() {
+    var chart = nv.models.lineChart()
+                  .x(function(d) { return d[0] })
+                  .y(function(d) { return d[1]/100 }) //adjusting, 100% is 1.00, not 100 as it is in the data
+                  //.color(d3.scale.category10().range())
+                  .width(width)
+                  .useInteractiveGuideline(true);
+             
 
-        d3.select('#chart1')
-            .datum(success)
-            .transition().duration(1200)
-            .call(chart);
-        nv.utils.windowResize(chart.update);
-        chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
-        chart.state.dispatch.on('change', function(state){
-            nv.log('state', JSON.stringify(state));
-        });
-        return chart;
-    });
+     chart.xAxis
+        .tickValues([1351728000000,1385856000000,1412800000000])
+        .tickFormat(function(d) {
+            return d3.time.format('%B %Y')(new Date(d))
+          });
+
+    chart.yAxis
+        .tickFormat(d3.format('%'));
+
+    d3.select('#chart1')
+        .datum(data)
+        .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
 
 
-
-/*
-
-    nv.addGraph(function() {
-        var chart = nv.models.pieChart()
-            .x(function(d) { return d.x })
-            .y(function(d) { return d.y })
-            //.color(d3.scale.category20().range().slice(8))
-            .growOnHover(true)
-            .width(width)
-            .height(height);
-        d3.select("#chart1")
-            .datum(success1)
-            .transition().duration(1200)
-            .attr('width', width)
-            .attr('height', height)
-            .call(chart);
-        return chart;
-    });
-    
-     nv.addGraph(function() {
-        var chart = nv.models.pieChart()
-            .x(function(d) { return d.x })
-            .y(function(d) { return d.y })
-            .color(d3.scale.category20().range().slice(8))
-            .growOnHover(true)
-            .tooltipContent(function(key, y, e, graph) {
-              return '<h5 style="padding: 5px; background-color: '
-                        + e.color + x + '<h5 style="padding:5px;>' +  y + '</h5>';
-            })
-            .width(width)
-            .height(height);
-        d3.select("#chart2")
-            .datum(success2)
-            .transition().duration(1200)
-            .attr('width', width)
-            .attr('height', height)
-            .call(chart);
-        return chart;
-    });
-
-*/
 </script>
 	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
