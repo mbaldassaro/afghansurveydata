@@ -289,7 +289,8 @@
                                 <li><a href="../gi-problems-community/index.html">Problems - Community</a></li>
                                 <li><a href="../gi-direction/index.html">Direction of the Country</a></li>
                                 <li><a href="../gi-direction-region/index.html">Direction - Region</a></li>
-                                <li><a href="../gi-direction-right-wrong/index.html">Direction - Why Right or Wrong</a></li>
+                                <li><a href="../gi-direction-right/index.html">Direction - Right</a></li>
+                                <li><a href="../gi-direction-wrong/index.html">Direction - Wrong</a></li>
                                 <li><a href="../gi-living-conditions/index.html">Living Conditions</a></li>
                                 <li><a href="../gi-security-situation/index.html">Security Situation</a></li>
                             </ul>
@@ -307,7 +308,7 @@
             display: block;
             float: left;
             height: 500px;
-            width: 1000px;
+            width: 1100px;
         } 
 
 /*
@@ -570,7 +571,7 @@ nv.addGraph(function() {
   var chart = nv.models.multiBarChart()
       .x(function(d) { return d.label })
       .y(function(d) { return d.value / 100 })
-      .margin({left: 100})
+      //.margin({left: 100})
       /*.tooltipContent(function(key, x, y, e, graph) {
         return '<h5 style="text-align:center; padding:0px; color:#000; font-weight: 700">' + key + " (" + x + ")</h5><h4 style='text-align: center; color: #000; font-weight: 700;'>" + y + '</h5>'
     });*/

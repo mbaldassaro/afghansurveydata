@@ -300,14 +300,14 @@
             </div> 
 
 
-<!-- General Issues - Living Conditions -->
+<!-- Reasons in the Right Direction -->
 
 <style>
       
         svg {
             display: block;
             float: left;
-            height: 550px;
+            height: 500px;
             width: 1000px;
         } 
 
@@ -325,13 +325,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     
-                    <h1 class="page-header"><strong>RESPONDENTS PRESENT LIVING CONDITIONS</strong></h1>
+                    <h1 class="page-header"><strong>REASONS COUNTRY IS GOING IN RIGHT DIRECTION</strong></h1>
 
                 </div>
             </div>
                     
                      <svg id="chart1" class="with-3d-shadow with-transitions"></svg>
-                    
+   
 
                 <div id="menu-wrapper">
                     <div id="menu-canvas">
@@ -354,209 +354,154 @@
 
     <script>
    
-   var data = [
+    var data1 = [
     {
-        "key": "Very Bad",
-        "color": "#800000", //red
+        "key": "National Unity Government",
         "values": [
-            {   "label": "National Average",
-                "value": 14.3
-            },
             {
-                "label": "South",
-                "value": 16.3
-            },
-            {
-                "label": "Central",
-                "value": 9.5
-            },
-            {
-                "label": "West",
-                "value": 16.4
-            },
-            {
-                "label": "South East",
-                "value": 6.2
-            },
-            {
-                "label": "Central Highlands",
-                "value": 23.8
-            },
-            {
-                "label": "North",
-                "value": 9.7
-            },
-            {
-                "label": "North East",
-                "value": 2.4
-            },
-            {
-                "label": "East",
-                "value": 11.3
-
+                "label": "Right Direction",
+                "value": 13.3
             }
         ]
     },
     {
-        "key": "Fairly Bad",
-        "color": "#BC8F8F", //light red
+        "key": "International Assistance",
         "values": [
-            {   "label": "National Average",
-                "value": 27.0
-            },
             {
-                "label": "South",
-                "value": 22.9
-            },
-            {
-                "label": "Central",
-                "value": 20.4
-            },
-            {
-                "label": "West",
-                "value": 39.7
-            },
-            {
-                "label": "South East",
-                "value": 27.2
-            },
-            {
-                "label": "Central Highlands",
-                "value": 37.1
-            },
-            {
-                "label": "North",
-                "value": 33.3
-            },
-            {
-                "label": "North East",
-                "value": 17.9
-            },
-            {
-                "label": "East",
-                "value": 25.2
-
+                "label": "Right Direction",
+                "value": 13.1
             }
         ]
     },
     {
-        "key": "Fairly Good",
-        "color": "#7AA9DD", //light blue
+        "key": "Good Security",
         "values": [
-            {   "label": "National Average",
-                "value": 48.0
-            },
+            
             {
-                "label": "South",
-                "value": 48.0
-            },
-            {
-                "label": "Central",
-                "value": 55.1
-            },
-            {
-                "label": "West",
-                "value": 36.7
-            },
-            {
-                "label": "South East",
-                "value": 53.1
-            },
-            {
-                "label": "Central Highlands",
-                "value": 35.9
-            },
-            {
-                "label": "North",
-                "value": 42.0
-            },
-            {
-                "label": "North East",
-                "value": 60.8
-            },
-            {
-                "label": "East",
-                "value": 52.6
-
+                "label": "Right Direction",
+                "value": 12.5
             }
         ]
     },
     {
-        "key": "Very Good",
-        "color": "#005288", //blue
+        "key": "Legitimate Constitution",
         "values": [
-            {   "label": "National Average",
-                "value": 9.9
-            },
+            
             {
-                "label": "South",
-                "value": 12.7
-            },
+                "label": "Right Direction",
+                "value": 11.0
+            }
+        ]
+    },
+    {
+        "key": "Good Governance",
+        "values": [
+            
             {
-                "label": "Central",
-                "value": 14.9
-            },
+                "label": "Right Direction",
+                "value": 9.0
+            }
+        ]
+    },
+    {
+        "key": "Girls' Education",
+        "values": [
+            
             {
-                "label": "West",
+                "label": "Right Direction",
+                "value": 8.8
+            }
+        ]
+    },
+    {
+        "key": "Good Reconstruction",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 8.0
+            }
+        ]
+    },
+    {
+        "key": "Better Economy",
+        "values": [
+            
+            {
+                "label": "Right Direction",
                 "value": 6.9
-            },
-            {
-                "label": "South East",
-                "value": 13.5
-            },
-            {
-                "label": "Central Highlands",
-                "value": 3.2
-            },
-            {
-                "label": "North",
-                "value": 14.3
-            },
-            {
-                "label": "North East",
-                "value": 18.9
-            },
-            {
-                "label": "East",
-                "value": 10.9 
-
             }
         ]
-    }
-]
-    
-nv.addGraph(function() {
-  var chart = nv.models.multiBarHorizontalChart()
-      .x(function(d) { return d.label })
-      .y(function(d) { return d.value / 100 })
-      .margin({left: 100})
-      /*.tooltipContent(function(key, x, y, e, graph) {
-        return '<h5 style="text-align:center; padding:0px; color:#000; font-weight: 700">' + key + " (" + x + ")</h5><h4 style='text-align: center; color: #000; font-weight: 700;'>" + y + '</h5>'
-    });*/
+    },
+    {
+        "key": "Democracy & Elections",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 6.5
+            }
+        ]
+    },
+    {
+        "key": "Peace",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 5.6
+            }
+        ]
+    },
+    {       
+        "key": "Freedom of Movement",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 3.2
+            }
+        ]
+        },
+        {
+        "key": "Good President",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 1.0
+            }
+        ]
+        }
+       ]
 
-      
-        //.showValues(false)
-        .tooltips(true)
-        //.barColor(d3.scale.category20().range())
-        //.stacked(true)
-        //.showControls(false);
+var chart;
+    nv.addGraph(function() {
+        chart = nv.models.multiBarChart()
+            .x(function(d) { return d.label })
+            .y(function(d) { return d.value / 100 })
+            //.barColor(d3.scale.category10().range())
+            .duration(1200)
+            .tooltipContent(function(key, x, y, e, graph) {
+        return '<h3>' + key + '</h3><p>' + y + '</p>'
+    });
+            //.growOnHover(true)
+            //.stacked(true);
+            
+        chart.yAxis.tickFormat(d3.format('.1%'));
 
-  chart.yAxis 
-    .tickFormat(d3.format('.1%'));
-  //chart.xAxis
-    //.tickFormat(d3.format('d'));
+        d3.select('#chart1')
+            .datum(data1)
+            .transition().duration(1200)
+            .call(chart);
+        nv.utils.windowResize(chart.update);
+        chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+        chart.state.dispatch.on('change', function(state){
+            nv.log('state', JSON.stringify(state));
+        });
+        return chart;
+    });
 
-  d3.select('#chart1')
-      .datum(data)
-      .transition().duration(1200)
-      .call(chart);
-
-  nv.utils.windowResize(chart.update);
-
-  chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
-
-  return chart;
-});
 
 </script>
 	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
