@@ -299,46 +299,53 @@
             </div> 
 
 
+<!-- Reasons in the Right or Wrong Direction -->
+
 <style>
-    
+      
         svg {
             display: block;
             float: left;
-            height: 500px;
+            height: 550px;
             width: 500px;
-        }
- 
+        } 
+
+/*
+  Minimum height and width is a good idea to prevent negative SVG dimensions...
+  For example width should be =< margin.left + margin.right + 1,
+  of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
+*/
+
+
 </style>
 
     <div id="wrapper">
         <div id="page-wrapper">
-            <!--<img src="../img/AfSurv.jpg" id="template" />-->
-        
-
-            <!--<div class="row">
+            <div class="row">
                 <div class="col-lg-12">
                     
-                    <h1 class="page-header"><strong>WHAT IS THE BIGGEST PROBLEM AT THE NATIONAL LEVEL?</strong></h1>
+                    <h1 class="page-header"><strong>REASONS FOR GOING IN THE RIGHT OR WRONG DIRECTION</strong></h1>
 
                 </div>
             </div>
                     
                      <svg id="chart1" class="with-3d-shadow with-transitions"></svg>
-                     <svg id="chart2" class="with-3d-shadow with-transitions"></svg>   
+                     <svg id="chart2" class="with-3d-shadow with-transitions"></svg>
+   
 
                 <div id="menu-wrapper">
                     <div id="menu-canvas">
                     <div id="site-menu"> 
                     
-                        <h5><strong>Bold Heading Topic</strong></h5>
-                        <h5>Put any text you want here. Style it however you want.</h5>
+                        <h4>Bold Heading Topic</h4>
+                        <p>Put any text you want here. Style it however you want.</p>
                     </div> 
             
                     
                     <a href="#" class="toggle-nav btn btn-sm btn-primary" id="#"><i class="fa fa-info"></i></a>
                     <a href="#" class="toggle-nav"></a>    
                 </div> 
-               </div> -->    
+               </div>     
             </div>
         </div> 
 
@@ -347,82 +354,293 @@
 
     <script>
    
-    var testdata = [
-        {key: "One", y: 5},
-        {key: "Two", y: 2},
-        {key: "Three", y: 9},
-        {key: "Four", y: 7},
-        {key: "Five", y: 4},
-        {key: "Six", y: 3},
-        {key: "Seven", y: 0.5}
-    ];
-    var testdata2 = [
-        {key: "One", y: 5},
-        {key: "Two", y: 2},
-        {key: "Three", y: 9},
-        {key: "Four", y: 7},
-        {key: "Five", y: 4},
-        {key: "Six", y: 3},
-        {key: "Seven", y: 0.5}
-    ];
-    var height = 500;
-    var width = 500;
+    var data1 = [
+    {
+        "key": "National Unity Government",
+        "values": [
+            {
+                "label": "Right Direction",
+                "value": 13.3
+            }
+        ]
+    },
+    {
+        "key": "International Assistance",
+        "values": [
+            {
+                "label": "Right Direction",
+                "value": 13.1
+            }
+        ]
+    },
+    {
+        "key": "Good Security",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 12.5
+            }
+        ]
+    },
+    {
+        "key": "Legitimate Constitution",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 11.0
+            }
+        ]
+    },
+    {
+        "key": "Good Governance",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 9.0
+            }
+        ]
+    },
+    {
+        "key": "Girls' Education",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 8.8
+            }
+        ]
+    },
+    {
+        "key": "Good Reconstruction",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 8.0
+            }
+        ]
+    },
+    {
+        "key": "Better Economy",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 6.9
+            }
+        ]
+    },
+    {
+        "key": "Democracy & Elections",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 6.5
+            }
+        ]
+    },
+    {
+        "key": "Peace",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 5.6
+            }
+        ]
+    },
+    {       
+        "key": "Freedom of Movement",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 3.2
+            }
+        ]
+        },
+        {
+        "key": "Good President",
+        "values": [
+            
+            {
+                "label": "Right Direction",
+                "value": 1.0
+            }
+        ]
+        }
+       ]
 
+   var data2 = [
+    {
+        "key": "Presence of Taliban",
+        "values": [
+            {
+                "label": "Wrong Direction",
+                "value": 17.3
+            }
+        ]
+    },
+    {
+        "key": "Official Corruption",
+        "values": [
+            {
+                "label": "Wrong Direction",
+                "value": 13.6
+            }
+        ]
+    },
+    {
+        "key": "Insecurity",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 13.1
+            }
+        ]
+    },
+    {
+        "key": "Neighboring Countries",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 11.8
+            }
+        ]
+    },
+    {
+        "key": "Poor Economy",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 11.5
+            }
+        ]
+    },
+    {
+        "key": "Poor Governance",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 7.3
+            }
+        ]
+    },
+    {
+        "key": "Innocent Being Killed",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 7.0
+            }
+        ]
+    },
+    {
+        "key": "No Reconstruction",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 6.1
+            }
+        ]
+    },
+    {
+        "key": "Poor Education System",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 5.6
+            }
+        ]
+    },
+    {
+        "key": "Lack of International Assistance",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 4.2
+            }
+        ]
+    },
+        {
+        "key": "Ethnic Divisions",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 2.5
+            }
+        ]
+        }
+       ]
+
+
+var chart;
     nv.addGraph(function() {
-        var chart = nv.models.pieChart()
-            .x(function(d) { return d.key })
-            .y(function(d) { return d.y })
-            .width(width)
-            .height(height);
-        d3.select("#chart1")
-            .datum(testdata2)
-            //.transition().duration(1200)
-            .attr('width', width)
-            .attr('height', height)
+        chart = nv.models.multiBarChart()
+            .x(function(d) { return d.label })
+            .y(function(d) { return d.value / 100 })
+            //.barColor(d3.scale.category10().range())
+            .duration(1200)
+            .tooltipContent(function(key, x, y, e, graph) {
+        return '<h3>' + key + '</h3><p>' + y + '</p>'
+    });
+            //.growOnHover(true)
+            //.stacked(true);
+            
+        chart.yAxis.tickFormat(d3.format('.1%'));
+
+        d3.select('#chart1')
+            .datum(data1)
+            .transition().duration(1200)
             .call(chart);
-        // update chart data values randomly
-        setInterval(function() {
-            testdata2[0].y = Math.floor(Math.random() * 10);
-            testdata2[1].y = Math.floor(Math.random() * 10);
-            chart.update();
-        }, 4000);
+        nv.utils.windowResize(chart.update);
+        chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+        chart.state.dispatch.on('change', function(state){
+            nv.log('state', JSON.stringify(state));
+        });
         return chart;
     });
+
+    var chart;
     nv.addGraph(function() {
-        var chart = nv.models.pieChart()
-            .x(function(d) { return d.key })
-            .y(function(d) { return d.y })
-            //.labelThreshold(.08)
-            //.showLabels(false)
-            .color(d3.scale.category20().range().slice(8))
-            .growOnHover(false)
-            .tooltipContent(function(key, y, e, graph) {
-                return '<h3 style="padding: 5px; background-color: '
-                        + e.color + '"><strong>Yo, the value is</strong></h3>'
-                        + '<p style="padding:5px;">' +  y + '</p>';
-            })
-            .width(width)
-            .height(height);
-        // make it a half circle
-        chart.pie
-            .startAngle(function(d) { return d.startAngle/2 -Math.PI/2 })
-            .endAngle(function(d) { return d.endAngle/2 -Math.PI/2 });
-        // MAKES LABELS OUTSIDE OF DONUT
-        //chart.pie.donutLabelsOutside(true).donut(true);
-        d3.select("#chart2")
-            .datum(testdata)
-            //.transition().duration(1200)
-            .attr('width', width)
-            .attr('height', height)
+        chart = nv.models.multiBarChart()
+            .x(function(d) { return d.label })
+            .y(function(d) { return d.value / 100 })
+            .color(d3.scale.category20().range())
+            .duration(1200)
+            .tooltipContent(function(key, x, y, e, graph) {
+        return '<h3>' + key + '</h3><p>' + y + '</p>'
+    });
+            //.growOnHover(true)
+            //.stacked(true);
+            
+        chart.yAxis.tickFormat(d3.format('.1%'));
+
+        d3.select('#chart2')
+            .datum(data2)
+            .transition().duration(1200)
             .call(chart);
-        // disable and enable some of the sections
-        var is_disabled = false;
-        setInterval(function() {
-            chart.dispatch.changeState({disabled: {2: !is_disabled, 4: !is_disabled}});
-            is_disabled = !is_disabled;
-        }, 3000);
+        nv.utils.windowResize(chart.update);
+        chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+        chart.state.dispatch.on('change', function(state){
+            nv.log('state', JSON.stringify(state));
+        });
         return chart;
     });
+
 </script>
 	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
 

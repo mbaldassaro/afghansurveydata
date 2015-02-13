@@ -289,14 +289,9 @@
                                 <li><a href="../gi-problems-community/index.html">Problems - Community</a></li>
                                 <li><a href="../gi-direction/index.html">Direction of the Country</a></li>
                                 <li><a href="../gi-direction-region/index.html">Direction - Region</a></li>
-                                <li><a href="#">Direction - Why Right or Wrong</a></li>
-                                <li><a href="#">Living Conditions</a></li>
-                                <li><a href="#">Living Conditions - Gender &amp; Region</a></li>
-                                <li><a href="#">Economic Conditions</a></li>
-                                <li><a href="#">Economic Security</a></li>
-                                <li><a href="#">Security Situation - Country</a></li>
-                                <li><a href="#">Security Situation - Community</a></li>
-                                <li><a href="#">Security Situation - Future</a></li>
+                                <li><a href="../gi-direction-right-wrong/index.html">Direction - Why Right or Wrong</a></li>
+                                <li><a href="../gi-living-conditions/index.html">Living Conditions</a></li>
+                                <li><a href="../gi-security-situation/index.html">Security Situation</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -373,6 +368,24 @@ var data = [
         ]
     },
     {
+        "key": "Some Right / Some Wrong",
+        "color": "#8B4789", //purple
+        "values": [
+            [
+                1351728000000,
+                15.7
+            ],
+            [
+                1385856000000,
+                33.8
+            ],
+            [
+                1412800000000,
+                33.5
+            ]
+        ]
+    },
+    {
         "key": "Right Direction",
         "color": "#005288", //blue
         "values": [
@@ -387,24 +400,6 @@ var data = [
             [
             	1412800000000,
             	48.1
-            ]
-        ]
-    },
-    {
-        "key": "Some Right / Some Wrong",
-        "color": "#77007e", //purple
-        "values": [
-            [
-                1351728000000,
-                15.7
-            ],
-            [
-                1385856000000,
-                33.8
-            ],
-            [
-            	1412800000000,
-            	33.5
             ]
         ]
     },
@@ -437,7 +432,7 @@ var data = [
                   //.color(d3.scale.category10().range())
                   
                   .duration(1200)
-                  .width(width)
+                  //.width(width)
                   .useInteractiveGuideline(true);
              
 
@@ -445,7 +440,7 @@ var data = [
         .margin({bottom: 50})
         .tickValues([1351728000000,1385856000000,1412800000000])
         .tickFormat(function(d) {
-            return d3.time.format('%B %Y')(new Date(d))
+            return d3.time.format('%m/%Y')(new Date(d))
           });
 
     chart.yAxis
