@@ -50,7 +50,7 @@ svg {
 var data = [
     {
         "key": "Wrong Direction",
-        "color": "red",
+        "color": "#800000", //red
         "values": [
             {
                 "label": "South",
@@ -84,7 +84,7 @@ var data = [
     },
     {
         "key": "Right Direction",
-        "color": "blue",
+        "color": "#005288", //blue
         "values": [
             {
                 "label": "South",
@@ -118,7 +118,7 @@ var data = [
     },
     {
         "key": "Some Right / Some Wrong",
-        "color": "purple",
+        "color": "#77007e", //purple
         "values": [
             {
                 "label": "South",
@@ -152,7 +152,7 @@ var data = [
     },
     {
         "key": "Don't Know",
-        "color": "green",
+        "color": "#004001", //green
         "values": [
             {
                 "label": "South",
@@ -190,16 +190,20 @@ nv.addGraph(function() {
   var chart = nv.models.multiBarHorizontalChart()
       .x(function(d) { return d.label })
       .y(function(d) { return d.value / 100 })
-      .margin({top: 30, right: 20, bottom: 50, left: 75})
-      //.showValues(false)
-      //.tooltips(true)
-      //.barColor(d3.scale.category20().range())
-      //.transitionDuration(1200)
-      //.stacked(true)
-      //.showControls(false);
+      .margin({left: 100})
+      /*.tooltipContent(function(key, x, y, e, graph) {
+        return '<h5 style="text-align:center; padding:0px; color:#000; font-weight: 700">' + key + " (" + x + ")</h5><h4 style='text-align: center; color: #000; font-weight: 700;'>" + y + '</h5>'
+    });*/
+
+      
+        //.showValues(false)
+        .tooltips(true)
+        //.barColor(d3.scale.category20().range())
+        //.stacked(true)
+        //.showControls(false);
 
   chart.yAxis 
-    .tickFormat(d3.format('%'));
+    .tickFormat(d3.format('.1%'));
   //chart.xAxis
     //.tickFormat(d3.format('d'));
 

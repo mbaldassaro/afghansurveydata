@@ -41,7 +41,7 @@
     <script src="../bower_components/nvd3/src/models/scatter.js"></script>
     <script src="../bower_components/nvd3/src/models/line.js"></script>
     <script src="../bower_components/nvd3/src/models/lineChart.js"></script>-->
-    <<script src="../bower_components/nvd3/src/models/multiBarHorizontal.js"></script>
+    <script src="../bower_components/nvd3/src/models/multiBarHorizontal.js"></script>
     <script src="../bower_components/nvd3/src/models/multiBarHorizontalChart.js"></script>
     <!--<script src="../bower_components/nvd3/src/models/multiBarChart.js"></script>
     <script src="../bower_components/nvd3/src/models/multiBar.js"></script>-->
@@ -555,11 +555,14 @@ var chart;
             .x(function(d) { return d.label })
             .y(function(d) { return d.value / 100 })
             //.barColor(d3.scale.category10().range())
-            .duration(250)
+            .duration(1200)
+            .tooltipContent(function(key, x, y, e, graph) {
+        return '<h3>' + key + '</h3><p>' + y + '</p>'
+    });
             //.growOnHover(true)
             //.stacked(true);
             
-        chart.yAxis.tickFormat(d3.format('%'));
+        chart.yAxis.tickFormat(d3.format('.1%'));
 
         d3.select('#chart1')
             .datum(success)

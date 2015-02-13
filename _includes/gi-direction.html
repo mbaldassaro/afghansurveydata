@@ -6,7 +6,7 @@ svg {
             display: block;
             float: left;
             height: 500px;
-            width: 1050px;
+            width: 1000px;
         } 
 
 
@@ -50,7 +50,7 @@ svg {
 var data = [
     {
         "key": "Wrong Direction",
-        "color": "#d62728",
+        "color": "#800000", //red
         "values": [
             [
                 1351728000000,
@@ -68,7 +68,7 @@ var data = [
     },
     {
         "key": "Right Direction",
-        "color": "#1f77b4",
+        "color": "#005288", //blue
         "values": [
             [
                 1351728000000,
@@ -86,7 +86,7 @@ var data = [
     },
     {
         "key": "Some Right / Some Wrong",
-        "color": "purple",
+        "color": "#77007e", //purple
         "values": [
             [
                 1351728000000,
@@ -104,7 +104,7 @@ var data = [
     },
     {
         "key": "Don't Know",
-        "color": "green",
+        "color": "#004001", //green
         "values": [
             [
                 1351728000000,
@@ -122,28 +122,32 @@ var data = [
     }
 ]
 
-	var width = 1000; 
+	var width = 950; 
 
   nv.addGraph(function() {
     var chart = nv.models.lineChart()
                   .x(function(d) { return d[0] })
                   .y(function(d) { return d[1]/100 }) //adjusting, 100% is 1.00, not 100 as it is in the data
                   //.color(d3.scale.category10().range())
+                  
+                  .duration(1200)
                   .width(width)
                   .useInteractiveGuideline(true);
              
 
      chart.xAxis
+        .margin({bottom: 50})
         .tickValues([1351728000000,1385856000000,1412800000000])
         .tickFormat(function(d) {
             return d3.time.format('%B %Y')(new Date(d))
           });
 
     chart.yAxis
-        .tickFormat(d3.format('%'));
+        .tickFormat(d3.format('.1%'));
 
     d3.select('#chart1')
         .datum(data)
+        .transition().duration(1200)
         .call(chart);
 
     nv.utils.windowResize(chart.update);
