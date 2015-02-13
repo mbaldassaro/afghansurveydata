@@ -284,7 +284,7 @@
                              
                         <li><a href="#"><i class="fa fa-globe fa-fw"></i> General Issues<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li><a href="../gi-successes/index.html">Successes in Past 10 Years</a></li>
+                                <li><a href="../gi-successes/index.html">Successes - Past Ten Years</a></li>
                                 <li><a href="../gi-problems-national/index.html">Problems - National</a></li>
                                 <li><a href="../gi-problems-community/index.html">Problems - Community</a></li>
                                 <li><a href="../gi-direction/index.html">Direction of the Country</a></li>
@@ -306,7 +306,7 @@
         svg {
             display: block;
             float: left;
-            height: 550px;
+            height: 500px;
             width: 1000px;
         } 
 
@@ -405,7 +405,7 @@
             },
             {
                 "label": "South",
-                "value": 13.6
+                "value": 13.5
             },
             {
                 "label": "Central",
@@ -567,7 +567,7 @@
 ]
     
 nv.addGraph(function() {
-  var chart = nv.models.multiBarHorizontalChart()
+  var chart = nv.models.multiBarChart()
       .x(function(d) { return d.label })
       .y(function(d) { return d.value / 100 })
       .margin({left: 100})
