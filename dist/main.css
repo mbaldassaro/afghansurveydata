@@ -21,9 +21,16 @@ body {
     font-family: Lato; 
 }
 
+#brand {
+  width: 45px;
+  height: 30px;
+  margin: 10 -15;
+}
+
 #logo {
     margin: 0 20 2 0;
 }
+
 
 a, h4 { 
     color: #afafaf;
