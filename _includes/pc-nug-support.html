@@ -1,29 +1,37 @@
+<!-- Political Climate - Support for National Unity Government -->
 
-<!--General Issues - Direction of the Country - By Region -->
 <style>
-
-svg {
+      
+        svg {
             display: block;
             float: left;
             height: 550px;
-            width: 1000px;
-        } 
+            width: 500px;
+        }
+
+
+/*
+  Minimum height and width is a good idea to prevent negative SVG dimensions...
+  For example width should be =< margin.left + margin.right + 1,
+  of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
+*/
 
 
 </style>
 
-<div id="wrapper">
+    <div id="wrapper">
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     
-                    <h1 class="page-header"><strong>DIRECTION OF THE COUNTRY BY REGION</strong></h1>
+                    <h1 class="page-header"><strong>SUPPORT IDEA OF NATIONAL UNITY GOVERNMENT</strong></h1>
 
                 </div>
             </div>
                     
                      <svg id="chart1" class="with-3d-shadow with-transitions"></svg>
-   
+                     <svg id="chart2" class="with-3d-shadow with transitions"></svg>
+                    
 
                 <div id="menu-wrapper">
                     <div id="menu-canvas">
@@ -44,37 +52,87 @@ svg {
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-<script>
+    <script>
+   
+   var data1 = [
+        {key: "Yes", y: 85.1},
+        {key: "No", y: 12.0},
+        {key: "Don't Know", y: 2.6}
+    ];
 
-
-var data = [
+   var data2 = [
     {
-        "key": "Wrong Direction",
-        "color": "#800000", //red
+        "key": "Yes",
+        "color": "#005288", //blue
         "values": [
+            {   "label": "National Average",
+                "value": 85.1
+            },
             {
                 "label": "South",
-                "value": 18.2
+                "value": 59.4
             },
             {
                 "label": "Central",
-                "value": 11.8
+                "value": 90.0
             },
             {
                 "label": "West",
-                "value": 16.9
+                "value": 91.1
             },
             {
                 "label": "South East",
-                "value": 11.0
+                "value": 87.2
             },
             {
                 "label": "Central Highlands",
-                "value": 5.9
+                "value": 94.6
             },
             {
                 "label": "North",
+                "value": 84.1
+            },
+            {
+                "label": "North East",
+                "value": 88.3
+            },
+            {
+                "label": "East",
+                "value": 85.9
+
+            }
+        ]
+    },
+    {
+        "key": "No",
+        "color": "#800000", //red
+        "values": [
+            {   "label": "National Average",
                 "value": 12.0
+            },
+            {
+                "label": "South",
+                "value": 39.9
+            },
+            {
+                "label": "Central",
+                "value": 5.4
+            },
+            {
+                "label": "West",
+                "value": 8.7
+            },
+            {
+                "label": "South East",
+                "value": 12.1
+            },
+            {
+                "label": "Central Highlands",
+                "value": 3.2
+            },
+            {
+                "label": "North",
+                "value": 6.7
             },
             {
                 "label": "North East",
@@ -82,130 +140,33 @@ var data = [
             },
             {
                 "label": "East",
-                "value": 8.0
-
-            }
-        ]
-    },
-    {
-        "key": "Some Right / Some Wrong",
-        "color": "#8B4789", //purple
-        "values": [
-            {
-                "label": "South",
-                "value": 25.0
-            },
-            {
-                "label": "Central",
-                "value": 32.2
-            },
-            {
-                "label": "West",
-                "value": 31.4
-            },
-            {
-                "label": "South East",
-                "value": 39.2
-            },
-            {
-                "label": "Central Highlands",
-                "value": 41.9
-            },
-            {
-                "label": "North",
-                "value": 30.1
-            },
-            {
-                "label": "North East",
-                "value": 48.9
-            },
-            {
-                "label": "East",
-                "value": 22.3
-
-            }
-        ]
-    }, 
-    {
-        "key": "Right Direction",
-        "color": "#005288", //blue
-        "values": [
-            {
-                "label": "South",
-                "value": 55.1
-            },
-            {
-                "label": "Central",
-                "value": 50.8
-            },
-            {
-                "label": "West",
-                "value": 50.2
-            },
-            {
-                "label": "South East",
-                "value": 48.3
-            },
-            {
-                "label": "Central Highlands",
-                "value": 46.0
-            },
-            {
-                "label": "North",
-                "value": 39.9
-            },
-            {
-                "label": "North East",
-                "value": 31.8
-            },
-            {
-                "label": "East",
-                "value": 67.5
-
-            }
-        ]
-    },
-    {
-        "key": "Don't Know",
-        "color": "gray", //gray
-        "values": [
-            {
-                "label": "South",
-                "value": 1.8
-            },
-            {
-                "label": "Central",
-                "value": 5.1
-            },
-            {
-                "label": "West",
-                "value": 0.7
-            },
-            {
-                "label": "South East",
-                "value": 1.6
-            },
-            {
-                "label": "Central Highlands",
-                "value": 6.2
-            },
-            {
-                "label": "North",
-                "value": 17.3
-            },
-            {
-                "label": "North East",
-                "value": 8.5
-            },
-            {
-                "label": "East",
-                "value": 2.2
+                "value": 13.1 
 
             }
         ]
     }
 ]
-    
+ 
+nv.addGraph(function() {
+        var chart = nv.models.pieChart()
+            .x(function(d) { return d.key })
+            .y(function(d) { return d.y })
+            .color(["#005288", "#800000", "gray"]) 
+            .labelType("percent")
+            //.tooltips(false)
+            .tooltipContent(function(key, y, e, graph) {
+                return '<h5 style="padding: 5px; text-align: center">' + key + '</h5>'
+                        + '<p style="padding: 5px;">' +  y + '%</p>';
+            })
+            //.width(width)
+            //.height(height);
+        d3.select("#chart1")
+            .datum(data1)
+            .transition().duration(1200)
+            .call(chart);
+        return chart;
+    });
+
 nv.addGraph(function() {
   var chart = nv.models.multiBarHorizontalChart()
       .x(function(d) { return d.label })
@@ -227,8 +188,8 @@ nv.addGraph(function() {
   //chart.xAxis
     //.tickFormat(d3.format('d'));
 
-  d3.select('#chart1')
-      .datum(data)
+  d3.select('#chart2')
+      .datum(data2)
       .transition().duration(1200)
       .call(chart);
 
