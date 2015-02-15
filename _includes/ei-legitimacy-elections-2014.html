@@ -1,0 +1,259 @@
+<!-- Electoral Issues - Legitimacy of Elections 2014 -->
+
+<style>
+      
+        svg {
+            display: block;
+            float: left;
+            height: 500px;
+            width: 1100px;
+        } 
+
+/*
+  Minimum height and width is a good idea to prevent negative SVG dimensions...
+  For example width should be =< margin.left + margin.right + 1,
+  of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
+*/
+
+
+</style>
+
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <h1 class="page-header"><strong>LEGITIMACY OF 2014 ELECTIONS</strong></h1>
+
+                </div>
+            </div>
+                    
+                     <svg id="chart1" class="with-3d-shadow with-transitions"></svg>
+                    
+
+                <div id="menu-wrapper">
+                    <div id="menu-canvas">
+                    <div id="site-menu"> 
+                    
+                        <h4>Bold Heading Topic</h4>
+                        <p>Put any text you want here. Style it however you want.</p>
+                    </div> 
+            
+                    
+                    <a href="#" class="toggle-nav btn btn-sm btn-primary" id="#"><i class="fa fa-info"></i></a>
+                    <a href="#" class="toggle-nav"></a>    
+                </div> 
+               </div>     
+            </div>
+        </div> 
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script>
+   
+   var data = [
+    {
+        "key": "Strongly Disagree",
+        "color": "#800000", //red
+        "values": [
+            {   "label": "National Average",
+                "value": 15.1
+            },
+            {
+                "label": "South",
+                "value": 3.6
+            },
+            {
+                "label": "Central",
+                "value": 16.5
+            },
+            {
+                "label": "West",
+                "value": 33.7
+            },
+            {
+                "label": "South East",
+                "value": 8.7
+            },
+            {
+                "label": "Central Highlands",
+                "value": 18.8
+            },
+            {
+                "label": "North",
+                "value": 9.1
+            },
+            {
+                "label": "North East",
+                "value": 13.7
+            },
+            {
+                "label": "East",
+                "value": 4.8
+
+            }
+        ]
+    },
+    {
+        "key": "Somewhat Disagree",
+        "color": "#BC8F8F", //light red
+        "values": [
+            {   "label": "National Average",
+                "value": 15.2
+            },
+            {
+                "label": "South",
+                "value": 22.0
+            },
+            {
+                "label": "Central",
+                "value": 16.4
+            },
+            {
+                "label": "West",
+                "value": 24.7
+            },
+            {
+                "label": "South East",
+                "value": 30.9
+            },
+            {
+                "label": "Central Highlands",
+                "value": 12.1
+            },
+            {
+                "label": "North",
+                "value": 21.0
+            },
+            {
+                "label": "North East",
+                "value": 15.0
+            },
+            {
+                "label": "East",
+                "value": 6.0
+
+            }
+        ]
+    },
+    {
+        "key": "Somewhat Agree",
+        "color": "#7AA9DD", //light blue
+        "values": [
+            {   "label": "National Average",
+                "value": 42.6
+            },
+            {
+                "label": "South",
+                "value": 56.1
+            },
+            {
+                "label": "Central",
+                "value": 33.5
+            },
+            {
+                "label": "West",
+                "value": 31.0
+            },
+            {
+                "label": "South East",
+                "value": 42.8
+            },
+            {
+                "label": "Central Highlands",
+                "value": 23.9
+            },
+            {
+                "label": "North",
+                "value": 42.3
+            },
+            {
+                "label": "North East",
+                "value": 49.0
+            },
+            {
+                "label": "East",
+                "value": 44.1
+
+            }
+        ]
+    },
+    {
+        "key": "Strongly Agree",
+        "color": "#005288", //blue
+        "values": [
+            {   "label": "National Average",
+                "value": 24.3
+            },
+            {
+                "label": "South",
+                "value": 17.9
+            },
+            {
+                "label": "Central",
+                "value": 20.4
+            },
+            {
+                "label": "West",
+                "value": 10.0
+            },
+            {
+                "label": "South East",
+                "value": 15.9
+            },
+            {
+                "label": "Central Highlands",
+                "value": 32.1
+            },
+            {
+                "label": "North",
+                "value": 21.4
+            },
+            {
+                "label": "North East",
+                "value": 17.6
+            },
+            {
+                "label": "East",
+                "value": 35.3
+
+            }
+        ]
+    }
+]
+    
+nv.addGraph(function() {
+  var chart = nv.models.multiBarChart()
+      .x(function(d) { return d.label })
+      .y(function(d) { return d.value / 100 })
+      //.margin({left: 100})
+      /*.tooltipContent(function(key, x, y, e, graph) {
+        return '<h5 style="text-align:center; padding:0px; color:#000; font-weight: 700">' + key + " (" + x + ")</h5><h4 style='text-align: center; color: #000; font-weight: 700;'>" + y + '</h5>'
+    });*/
+
+      
+        //.showValues(false)
+        .tooltips(true)
+        //.barColor(d3.scale.category20().range())
+        .stacked(true)
+        //.showControls(false);
+
+  chart.yAxis 
+    .tickFormat(d3.format('.1%'));
+  //chart.xAxis
+    //.tickFormat(d3.format('d'));
+
+  d3.select('#chart1')
+      .datum(data)
+      .transition().duration(1200)
+      .call(chart);
+
+  nv.utils.windowResize(chart.update);
+
+  chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+  return chart;
+});
+
+</script>

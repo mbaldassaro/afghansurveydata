@@ -320,46 +320,57 @@
                     </ul>
                 </div>
             </div> 
+<!--Electoral Issues - Legitimacy of 2014 Elections - Voters -->
+
 <style>
-    
+      
         svg {
             display: block;
             float: left;
             height: 500px;
-            width: 500px;
-        }
- 
+            width: 1000px;
+        } 
+
+        /*#chart1 {
+            margin: 30px;
+            min-width: 100px;
+            min-height: 100px;
+            }
+/*
+  Minimum height and width is a good idea to prevent negative SVG dimensions...
+  For example width should be =< margin.left + margin.right + 1,
+  of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
+*/
+
+
 </style>
 
     <div id="wrapper">
         <div id="page-wrapper">
-            <!--<img src="../img/AfSurv.jpg" id="template" />-->
-        
-
-            <!--<div class="row">
+            <div class="row">
                 <div class="col-lg-12">
                     
-                    <h1 class="page-header"><strong>WHAT IS THE BIGGEST PROBLEM AT THE NATIONAL LEVEL?</strong></h1>
+                    <h1 class="page-header"><strong>LEGITIMACY OF 2014 ELECTIONS ACCORDING TO VOTERS</strong></h1>
 
                 </div>
             </div>
                     
                      <svg id="chart1" class="with-3d-shadow with-transitions"></svg>
-                     <svg id="chart2" class="with-3d-shadow with-transitions"></svg>   
+   
 
                 <div id="menu-wrapper">
                     <div id="menu-canvas">
                     <div id="site-menu"> 
                     
-                        <h5><strong>Bold Heading Topic</strong></h5>
-                        <h5>Put any text you want here. Style it however you want.</h5>
+                        <h4>Bold Heading Topic</h4>
+                        <p>Put any text you want here. Style it however you want.</p>
                     </div> 
             
                     
                     <a href="#" class="toggle-nav btn btn-sm btn-primary" id="#"><i class="fa fa-info"></i></a>
                     <a href="#" class="toggle-nav"></a>    
                 </div> 
-               </div> -->    
+               </div>     
             </div>
         </div> 
 
@@ -368,82 +379,185 @@
 
     <script>
    
-    var testdata = [
-        {key: "One", y: 5},
-        {key: "Two", y: 2},
-        {key: "Three", y: 9},
-        {key: "Four", y: 7},
-        {key: "Five", y: 4},
-        {key: "Six", y: 3},
-        {key: "Seven", y: 0.5}
-    ];
-    var testdata2 = [
-        {key: "One", y: 5},
-        {key: "Two", y: 2},
-        {key: "Three", y: 9},
-        {key: "Four", y: 7},
-        {key: "Five", y: 4},
-        {key: "Six", y: 3},
-        {key: "Seven", y: 0.5}
-    ];
-    var height = 500;
-    var width = 500;
+    var success = [
+    {
+        "key": "Central",
+        "values": [
+            {
+                "label": "April 2014 Elections",
+                "value": 65.9
+            },
+            {
+                "label": "June 2014 Runoff",
+                "value": 67.9
+            }
+        ]
+    },
+    {
+        "key": "Central Highlands",
+        "values": [
+            {
+                "label": "April 2014 Elections",
+                "value": 63.1
+            },
+            {
+                "label": "June 2014 Runoff",
+                "value": 63.6
+            }
+        ]
+    },
+    {
+        "key": "North",
+        "values": [
+            {
+                "label": "April 2014 Elections",
+                "value": 71.5
+            },
+            {
+                "label": "June 2014 Runoff",
+                "value": 72.8
+            }
+        ]
+    },
+    {
+        "key": "North East",
+        "values": [
+            {
+                "label": "April 2014 Elections",
+                "value": 60.4
+            },
+            {
+                "label": "June 2014 Runoff",
+                "value": 62.4
+            }
+        ]
+    },
+    {
+        "key": "East",
+        "values": [
+            {
+                "label": "April 2014 Elections",
+                "value": 93.7
+            },
+            {
+                "label": "June 2014 Runoff",
+                "value": 94.0
+            }
+        ]
+    },
+    {
+        "key": "West",
+        "values": [
+            {
+                "label": "April 2014 Elections",
+                "value": 52.0
+            },
+            {
+                "label": "June 2014 Runoff",
+                "value": 57.0
+            }
+        ]
+    },
+    {
+        "key": "South",
+        "values": [
+            {
+                "label": "April 2014 Elections",
+                "value": 80.8
+            },
+            {
+                "label": "June 2014 Runoff",
+                "value": 82.5
+            }
+        ]
+    },
+    {
+        "key": "South East",
+        "values": [
+            {
+                "label": "April 2014 Elections",
+                "value": 68.5
+            },
+            {
+                "label": "June 2014 Runoff",
+                "value": 72.7
+            }
+        ]
+    }
+]
+
+
+
+var chart;
+    nv.addGraph(function() {
+        chart = nv.models.multiBarChart()
+            .x(function(d) { return d.label })
+            .y(function(d) { return d.value / 100 })
+            //.barColor(d3.scale.category10().range())
+            .duration(1200)
+            .tooltipContent(function(key, x, y, e, graph) {
+        return '<h3>' + key + '</h3><p>' + y + '</p>'
+    });
+            //.growOnHover(true)
+            //.stacked(true);
+            
+        chart.yAxis.tickFormat(d3.format('.1%'));
+
+        d3.select('#chart1')
+            .datum(success)
+            .transition().duration(1200)
+            .call(chart);
+        nv.utils.windowResize(chart.update);
+        chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+        chart.state.dispatch.on('change', function(state){
+            nv.log('state', JSON.stringify(state));
+        });
+        return chart;
+    });
+
+
+
+/*
 
     nv.addGraph(function() {
         var chart = nv.models.pieChart()
-            .x(function(d) { return d.key })
+            .x(function(d) { return d.x })
             .y(function(d) { return d.y })
+            //.color(d3.scale.category20().range().slice(8))
+            .growOnHover(true)
             .width(width)
             .height(height);
         d3.select("#chart1")
-            .datum(testdata2)
-            //.transition().duration(1200)
+            .datum(success1)
+            .transition().duration(1200)
             .attr('width', width)
             .attr('height', height)
             .call(chart);
-        // update chart data values randomly
-        setInterval(function() {
-            testdata2[0].y = Math.floor(Math.random() * 10);
-            testdata2[1].y = Math.floor(Math.random() * 10);
-            chart.update();
-        }, 4000);
         return chart;
     });
-    nv.addGraph(function() {
+    
+     nv.addGraph(function() {
         var chart = nv.models.pieChart()
-            .x(function(d) { return d.key })
+            .x(function(d) { return d.x })
             .y(function(d) { return d.y })
-            //.labelThreshold(.08)
-            //.showLabels(false)
             .color(d3.scale.category20().range().slice(8))
-            .growOnHover(false)
+            .growOnHover(true)
             .tooltipContent(function(key, y, e, graph) {
-                return '<h3 style="padding: 5px; background-color: '
-                        + e.color + '"><strong>Yo, the value is</strong></h3>'
-                        + '<p style="padding:5px;">' +  y + '</p>';
+              return '<h5 style="padding: 5px; background-color: '
+                        + e.color + x + '<h5 style="padding:5px;>' +  y + '</h5>';
             })
             .width(width)
             .height(height);
-        // make it a half circle
-        chart.pie
-            .startAngle(function(d) { return d.startAngle/2 -Math.PI/2 })
-            .endAngle(function(d) { return d.endAngle/2 -Math.PI/2 });
-        // MAKES LABELS OUTSIDE OF DONUT
-        //chart.pie.donutLabelsOutside(true).donut(true);
         d3.select("#chart2")
-            .datum(testdata)
-            //.transition().duration(1200)
+            .datum(success2)
+            .transition().duration(1200)
             .attr('width', width)
             .attr('height', height)
             .call(chart);
-        // disable and enable some of the sections
-        var is_disabled = false;
-        setInterval(function() {
-            chart.dispatch.changeState({disabled: {2: !is_disabled, 4: !is_disabled}});
-            is_disabled = !is_disabled;
-        }, 3000);
         return chart;
     });
+
+*/
 </script>
 	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
 

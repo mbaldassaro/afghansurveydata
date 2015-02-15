@@ -320,46 +320,53 @@
                     </ul>
                 </div>
             </div> 
+<!-- Electoral Issues - Legitimacy of Elections 2009 & 2014 -->
+
 <style>
-    
+      
         svg {
             display: block;
             float: left;
-            height: 500px;
+            height: 550px;
             width: 500px;
-        }
- 
+        } 
+
+/*
+  Minimum height and width is a good idea to prevent negative SVG dimensions...
+  For example width should be =< margin.left + margin.right + 1,
+  of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
+*/
+
+
 </style>
 
     <div id="wrapper">
         <div id="page-wrapper">
-            <!--<img src="../img/AfSurv.jpg" id="template" />-->
-        
-
-            <!--<div class="row">
+            <div class="row">
                 <div class="col-lg-12">
                     
-                    <h1 class="page-header"><strong>WHAT IS THE BIGGEST PROBLEM AT THE NATIONAL LEVEL?</strong></h1>
+                    <h1 class="page-header"><strong>LEGITIMACY OF ELECTIONS - 2009 &amp; 2014</strong></h1>
 
                 </div>
             </div>
                     
                      <svg id="chart1" class="with-3d-shadow with-transitions"></svg>
-                     <svg id="chart2" class="with-3d-shadow with-transitions"></svg>   
+                     <svg id="chart2" class="with-3d-shadow with-transitions"></svg>
+                    
 
                 <div id="menu-wrapper">
                     <div id="menu-canvas">
                     <div id="site-menu"> 
                     
-                        <h5><strong>Bold Heading Topic</strong></h5>
-                        <h5>Put any text you want here. Style it however you want.</h5>
+                        <h4>Bold Heading Topic</h4>
+                        <p>Put any text you want here. Style it however you want.</p>
                     </div> 
             
                     
                     <a href="#" class="toggle-nav btn btn-sm btn-primary" id="#"><i class="fa fa-info"></i></a>
                     <a href="#" class="toggle-nav"></a>    
                 </div> 
-               </div> -->    
+               </div>     
             </div>
         </div> 
 
@@ -368,82 +375,66 @@
 
     <script>
    
-    var testdata = [
-        {key: "One", y: 5},
-        {key: "Two", y: 2},
-        {key: "Three", y: 9},
-        {key: "Four", y: 7},
-        {key: "Five", y: 4},
-        {key: "Six", y: 3},
-        {key: "Seven", y: 0.5}
+   var data1 = [
+        {key: "Strongly Agree", y: 31.3},
+        {key: "Somewhat Agree", y: 26.2},
+        {key: "Somewhat Disagree", y: 13.3},
+        {key: "Strongly Disagree", y: 6.9},
+        {key: "Don't Know", y: 18.9},
+        {key: "Refused", y: 3.4}
     ];
-    var testdata2 = [
-        {key: "One", y: 5},
-        {key: "Two", y: 2},
-        {key: "Three", y: 9},
-        {key: "Four", y: 7},
-        {key: "Five", y: 4},
-        {key: "Six", y: 3},
-        {key: "Seven", y: 0.5}
-    ];
-    var height = 500;
-    var width = 500;
 
-    nv.addGraph(function() {
+   var data2 = [
+        {key: "Strongly Agree", y: 24.3},
+        {key: "Somewhat Agree", y: 42.6},
+        {key: "Somewhat Disagree", y: 15.2},
+        {key: "Strongly Disagree", y: 15.1},
+        {key: "Don't Know", y: 2.7},
+        {key: "Refused", y: 0.1}
+    ];
+    
+nv.addGraph(function() {
         var chart = nv.models.pieChart()
             .x(function(d) { return d.key })
             .y(function(d) { return d.y })
-            .width(width)
-            .height(height);
-        d3.select("#chart1")
-            .datum(testdata2)
-            //.transition().duration(1200)
-            .attr('width', width)
-            .attr('height', height)
-            .call(chart);
-        // update chart data values randomly
-        setInterval(function() {
-            testdata2[0].y = Math.floor(Math.random() * 10);
-            testdata2[1].y = Math.floor(Math.random() * 10);
-            chart.update();
-        }, 4000);
-        return chart;
-    });
-    nv.addGraph(function() {
-        var chart = nv.models.pieChart()
-            .x(function(d) { return d.key })
-            .y(function(d) { return d.y })
-            //.labelThreshold(.08)
-            //.showLabels(false)
-            .color(d3.scale.category20().range().slice(8))
-            .growOnHover(false)
+            .color(["#005288", "#7AA9DD", "#BC8F8F", "#800000", "gray", "#e77c05"]) 
+            .labelType("percent")
+            //.tooltips(false)
             .tooltipContent(function(key, y, e, graph) {
-                return '<h3 style="padding: 5px; background-color: '
-                        + e.color + '"><strong>Yo, the value is</strong></h3>'
-                        + '<p style="padding:5px;">' +  y + '</p>';
+                return '<h5 style="padding: 5px; text-align: center">' + key + ' - 2009</h5>'
+                        + '<p style="padding: 5px;">' +  y + '%</p>';
             })
-            .width(width)
-            .height(height);
-        // make it a half circle
-        chart.pie
-            .startAngle(function(d) { return d.startAngle/2 -Math.PI/2 })
-            .endAngle(function(d) { return d.endAngle/2 -Math.PI/2 });
-        // MAKES LABELS OUTSIDE OF DONUT
-        //chart.pie.donutLabelsOutside(true).donut(true);
-        d3.select("#chart2")
-            .datum(testdata)
-            //.transition().duration(1200)
-            .attr('width', width)
-            .attr('height', height)
+            //.width(width)
+            //.height(height);
+        d3.select("#chart1")
+            .datum(data1)
+            .transition().duration(1200)
             .call(chart);
-        // disable and enable some of the sections
-        var is_disabled = false;
-        setInterval(function() {
-            chart.dispatch.changeState({disabled: {2: !is_disabled, 4: !is_disabled}});
-            is_disabled = !is_disabled;
-        }, 3000);
         return chart;
     });
+
+nv.addGraph(function() {
+        var chart = nv.models.pieChart()
+            .x(function(d) { return d.key })
+            .y(function(d) { return d.y })
+            .color(["#005288", "#7AA9DD", "#BC8F8F", "#800000", "gray", "#e77c05"]) 
+            .labelType("percent")
+            //.tooltips(false)
+            .tooltipContent(function(key, y, e, graph) {
+                return '<h5 style="padding: 5px; text-align: center">' + key + ' - 2014</h5>'
+                        + '<p style="padding: 5px;">' +  y + '%</p>';
+            })
+            //.width(width)
+            //.height(height);
+        d3.select("#chart2")
+            .datum(data2)
+            .transition().duration(1200)
+            .call(chart);
+        return chart;
+    });
+
+
+
 </script>
 	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
