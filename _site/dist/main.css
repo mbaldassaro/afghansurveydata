@@ -1,18 +1,4 @@
-/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
-
-/* Global Reset */
-/*!
- * Start Bootstrap - SB Admin 2 Bootstrap Admin Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
 body {
-    /*background-color: #000000;*/
     background-color: #fff;
     background-image: url(../img/AfSurvBackground.jpg);
     min-width: 100%;
@@ -38,7 +24,7 @@ body {
 }
 
 
-a, h1, h4 { 
+a, h4 { 
     color: #afafaf;
     font-weight: 100;
 }
@@ -55,11 +41,7 @@ b, strong {
 #page-wrapper {
     padding: 0 15px;
     min-height: 568px;
-    margin-left: 30px;
-    /*background-color: #fff;
-    background-image: url(../img/AfSurvBackground.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;*/    
+    margin-left: 30px;  
 }
 
 #page-header {
@@ -335,53 +317,8 @@ background-color: #000;
     color: #fff;
 }
 
-.chat {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
 
-.chat li {
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px dotted #999;
-}
-
-.chat li.left .chat-body {
-    margin-left: 60px;
-}
-
-.chat li.right .chat-body {
-    margin-right: 60px;
-}
-
-.chat li .chat-body p {
-    margin: 0;
-}
-
-.panel .slidedown .glyphicon,
-.chat .glyphicon {
-    margin-right: 5px;
-}
-
-.chat-panel .panel-body {
-    height: 350px;
-    overflow-y: scroll;
-}
-
-.login-panel {
-    margin-top: 25%;
-}
-
-.flot-chart {
-    display: block;
-    height: 400px;
-}
-
-.flot-chart-content {
-    width: 100%;
-    height: 100%;
-}
+/*
 
 .dataTables_wrapper {
     position: relative;
@@ -507,6 +444,7 @@ table.dataTable thead .sorting:after {
 .panel-yellow a {
     color: #f0ad4e;
 }
+*/
 
 .nvtooltip {
   position: absolute;
@@ -515,8 +453,8 @@ table.dataTable thead .sorting:after {
   border: 1px solid rgba(0,0,0,.2);
   z-index: 10000;
 
-  font-family: Arial;
-  font-size: 13px;
+  font-family: sans-serif;
+  font-size: 12px;
   text-align: left;
   pointer-events: none;
 

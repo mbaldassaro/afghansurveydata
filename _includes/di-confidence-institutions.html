@@ -1,0 +1,249 @@
+<!-- Democracy & Institutions - Confidence in Institutions & Authorities -->
+
+<style>
+      
+        svg {
+            display: block;
+            float: left;
+            height: 500px;
+            width: 1000px;
+        } 
+
+/*
+  Minimum height and width is a good idea to prevent negative SVG dimensions...
+  For example width should be =< margin.left + margin.right + 1,
+  of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
+*/
+
+
+</style>
+
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <h1 class="page-header"><strong>CONFIDENCE IN INSTITUTIONS &amp; GOVERNMENT AUTHORITIES</strong></h1>
+
+                </div>
+            </div>
+                    
+                     <svg id="chart1" class="with-3d-shadow with-transitions"></svg>
+                    
+
+                <div id="menu-wrapper">
+                    <div id="menu-canvas">
+                    <div id="site-menu"> 
+                    
+                        <h4>Bold Heading Topic</h4>
+                        <p>Put any text you want here. Style it however you want.</p>
+                    </div> 
+            
+                    
+                    <a href="#" class="toggle-nav btn btn-sm btn-primary" id="#"><i class="fa fa-info"></i></a>
+                    <a href="#" class="toggle-nav"></a>    
+                </div> 
+               </div>     
+            </div>
+        </div> 
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script>
+   
+   var data = [
+    {
+        "key": "A Lot of Confidence",
+        "color": "#005288", //blue
+        "values": [
+            {   "label": "National Army",
+                "value": 73.9
+            },
+            {
+                "label": "Neighbors",
+                "value": 68.5
+            },
+            {
+                "label": "Religious Leaders",
+                "value": 63.0
+            },
+            {
+                "label": "President",
+                "value": 59.0
+            },
+            {
+                "label": "Police",
+                "value": 50.2
+            },
+            {
+                "label": "Media",
+                "value": 43.0
+            },
+            {   "label": "Village Leader",
+                "value": 49.2
+            },
+            {
+                "label": "Community Dev Council",
+                "value": 29.9
+            },
+            {
+                "label": "Provincial Council",
+                "value": 25.9
+            },
+            {
+                "label": "Provincial Governor",
+                "value": 39.5
+            },
+            {
+                "label": "Meshrano Jirga",
+                "value": 23.5
+            },
+            {
+                "label": "Wolesi Jirga",
+                "value": 21.2
+            },
+            {   "label": "Provincial IEC",
+                "value": 18.8
+            },
+            {
+                "label": "Political Parties",
+                "value": 16.9
+            },
+            {
+                "label": "IEC",
+                "value": 19.5
+            },
+            {
+                "label": "Local Commanders",
+                "value": 20.9
+            },
+            {
+                "label": "Provincial IECC",
+                "value": 13.9
+            },
+            {
+                "label": "IECC",
+                "value": 14.9
+            },
+            {
+                "label": "Taliban",
+                "value": 2.6
+            }
+        ]
+    },
+
+    {
+        "key": "Some Confidence",
+        "color": "#7AA9DD", //light blue
+        "values": [
+            {   "label": "National Army",
+                "value": 22.1
+            },
+            {
+                "label": "Neighbors",
+                "value": 26.9
+            },
+            {
+                "label": "Religious Leaders",
+                "value": 32.1
+            },
+            {
+                "label": "President",
+                "value": 34.6
+            },
+            {
+                "label": "Police",
+                "value": 39.2
+            },
+            {
+                "label": "Media",
+                "value": 45.5
+            },
+            {   "label": "Village Leader",
+                "value": 38.5
+            },
+            {
+                "label": "Community Dev Council",
+                "value": 53.8
+            },
+            {
+                "label": "Provincial Council",
+                "value": 55.8
+            },
+            {
+                "label": "Provincial Governor",
+                "value": 41.7
+            },
+            {
+                "label": "Meshrano Jirga",
+                "value": 52.9
+            },
+            {
+                "label": "Wolesi Jirga",
+                "value": 50.5
+            },
+            {   "label": "Provincial IEC",
+                "value": 46.6
+            },
+            {
+                "label": "Political Parties",
+                "value": 47.2
+            },
+            {
+                "label": "IEC",
+                "value": 44.0
+            },
+            {
+                "label": "Local Commanders",
+                "value": 40.4
+            },
+            {
+                "label": "Provincial IECC",
+                "value": 46.4
+            },
+            {
+                "label": "IECC",
+                "value": 44.0
+            },
+            {
+                "label": "Taliban",
+                "value": 7.2
+            }
+        ]
+    }
+]
+    
+nv.addGraph(function() {
+  var chart = nv.models.multiBarHorizontalChart()
+      .x(function(d) { return d.label })
+      .y(function(d) { return d.value / 100 })
+      .margin({left: 150})
+      /*.tooltipContent(function(key, x, y, e, graph) {
+        return '<h5 style="text-align:center; padding:0px; color:#000; font-weight: 700">' + key + " (" + x + ")</h5><h4 style='text-align: center; color: #000; font-weight: 700;'>" + y + '</h5>'
+    });*/
+
+        //.showValues(false)
+        .tooltips(true)
+        //.barColor(d3.scale.category20().range())
+        .stacked(true)
+        //.showControls(false);
+
+  chart.yAxis 
+    .tickFormat(d3.format('.1%'));
+  //chart.xAxis
+    //.tickFormat(d3.format('d'));
+
+  d3.select('#chart1')
+      .datum(data)
+      .transition().duration(1200)
+      .call(chart);
+
+  nv.utils.windowResize(chart.update);
+
+  chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+  return chart;
+});
+
+</script>
