@@ -298,14 +298,13 @@
                             <ul class="nav nav-second-level">
                                 <li><a href="../ei-legitimacy-elections/index.html">Legitimacy of 2009 &amp; 2014 Elections</a></li>
                                 <li><a href="../ei-legitimacy-elections-2014/index.html">Legitimacy of 2014 Elections</a></li>
-                                <li><a href="../ei-legitimacy-elections-voters/index.html">Legitimacy of 2014 Elections - Voters</a></li>
+                                <li><a href="../ei-legitimacy-elections-voters/index.html">Legitimacy of 2014 Elections by Voters</a></li>
                                 <li><a href="../ei-integrity-results/index.html">Integrity of 2014 Results</a></li>
                                 <li><a href="../ei-audit-results/index.html">Audit &amp; Confidence in Results</a></li>
                                 <li><a href="../ei-election-successes/index.html">Biggest Election Successes</a></li>
                                 <li><a href="../ei-election-problems/index.html">Biggest Election Problems</a></li>
                                 <li><a href="../ei-reform-parliamentary/index.html">Need for Electoral Reform</a></li>
                                 <li><a href="../ei-reform-important/index.html">Important Electoral Reforms</a></li>
-                                <li><a href="../ei-ethnicity-elections/index.html">Ethnicity &amp; Elections</a></li>
                                 <li><a href="../ei-women-elections/index.html">Women &amp; Elections</a></li>
                                 
 
@@ -379,109 +378,61 @@
 
     <script>
    
-    var success = [
+    var data = [
     {
         "key": "Central",
         "values": [
-            {
-                "label": "April 2014 Elections",
-                "value": 65.9
-            },
-            {
-                "label": "June 2014 Runoff",
-                "value": 67.9
-            }
+            { "label": "April 2014 Elections", "value": 65.9 },
+            { "label": "June 2014 Runoff", "value": 67.9 }
         ]
     },
     {
         "key": "Central Highlands",
         "values": [
-            {
-                "label": "April 2014 Elections",
-                "value": 63.1
-            },
-            {
-                "label": "June 2014 Runoff",
-                "value": 63.6
-            }
-        ]
-    },
-    {
-        "key": "North",
-        "values": [
-            {
-                "label": "April 2014 Elections",
-                "value": 71.5
-            },
-            {
-                "label": "June 2014 Runoff",
-                "value": 72.8
-            }
-        ]
-    },
-    {
-        "key": "North East",
-        "values": [
-            {
-                "label": "April 2014 Elections",
-                "value": 60.4
-            },
-            {
-                "label": "June 2014 Runoff",
-                "value": 62.4
-            }
+            { "label": "April 2014 Elections", "value": 63.1 },
+            { "label": "June 2014 Runoff", "value": 63.6 }
         ]
     },
     {
         "key": "East",
         "values": [
-            {
-                "label": "April 2014 Elections",
-                "value": 93.7
-            },
-            {
-                "label": "June 2014 Runoff",
-                "value": 94.0
-            }
+            { "label": "April 2014 Elections", "value": 93.7 },
+            { "label": "June 2014 Runoff", "value": 94.0 }
         ]
     },
     {
-        "key": "West",
+        "key": "North",
         "values": [
-            {
-                "label": "April 2014 Elections",
-                "value": 52.0
-            },
-            {
-                "label": "June 2014 Runoff",
-                "value": 57.0
-            }
+            { "label": "April 2014 Elections", "value": 71.5 },
+            { "label": "June 2014 Runoff", "value": 72.8 }
+        ]
+    },
+    {
+        "key": "North East",
+        "values": [
+            { "label": "April 2014 Elections", "value": 60.4 },
+            { "label": "June 2014 Runoff", "value": 62.4 }
         ]
     },
     {
         "key": "South",
         "values": [
-            {
-                "label": "April 2014 Elections",
-                "value": 80.8
-            },
-            {
-                "label": "June 2014 Runoff",
-                "value": 82.5
-            }
+            { "label": "April 2014 Elections", "value": 80.8 },
+            { "label": "June 2014 Runoff", "value": 82.5 }
         ]
     },
     {
         "key": "South East",
         "values": [
-            {
-                "label": "April 2014 Elections",
-                "value": 68.5
-            },
-            {
-                "label": "June 2014 Runoff",
-                "value": 72.7
-            }
+            { "label": "April 2014 Elections", "value": 68.5 },
+            { "label": "June 2014 Runoff", "value": 72.7 }
+        ]
+    },
+    {
+        "key": "West",
+        "values": [
+            { "label": "April 2014 Elections", "value": 52.0 },
+            { "label": "June 2014 Runoff", "value": 57.0 }
         ]
     }
 ]
@@ -504,7 +455,7 @@ var chart;
         chart.yAxis.tickFormat(d3.format('.1%'));
 
         d3.select('#chart1')
-            .datum(success)
+            .datum(data)
             .transition().duration(1200)
             .call(chart);
         nv.utils.windowResize(chart.update);
@@ -516,48 +467,6 @@ var chart;
     });
 
 
-
-/*
-
-    nv.addGraph(function() {
-        var chart = nv.models.pieChart()
-            .x(function(d) { return d.x })
-            .y(function(d) { return d.y })
-            //.color(d3.scale.category20().range().slice(8))
-            .growOnHover(true)
-            .width(width)
-            .height(height);
-        d3.select("#chart1")
-            .datum(success1)
-            .transition().duration(1200)
-            .attr('width', width)
-            .attr('height', height)
-            .call(chart);
-        return chart;
-    });
-    
-     nv.addGraph(function() {
-        var chart = nv.models.pieChart()
-            .x(function(d) { return d.x })
-            .y(function(d) { return d.y })
-            .color(d3.scale.category20().range().slice(8))
-            .growOnHover(true)
-            .tooltipContent(function(key, y, e, graph) {
-              return '<h5 style="padding: 5px; background-color: '
-                        + e.color + x + '<h5 style="padding:5px;>' +  y + '</h5>';
-            })
-            .width(width)
-            .height(height);
-        d3.select("#chart2")
-            .datum(success2)
-            .transition().duration(1200)
-            .attr('width', width)
-            .attr('height', height)
-            .call(chart);
-        return chart;
-    });
-
-*/
 </script>
 	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
