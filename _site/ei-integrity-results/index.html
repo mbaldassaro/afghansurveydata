@@ -110,16 +110,16 @@
                     <ul class="dropdown-menu dropdown-alerts">
                         <!--<li><a href="#" class="topic"><div><i class="fa fa-comment fa-fw"></i> Download<span class="pull-right text-muted small">4 minutes ago</span></div></a></li>
                         <li class="divider"></li>-->
-                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> 3 New Followers<span class="pull-right text-muted small">12 minutes ago</span></div></a>
+                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> General Issues <span class="pull-right toggle-nav btn btn-sm btn-info" id="#">JSON</span></div></a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> Message Sent<span class="pull-right text-muted small">4 minutes ago</span></div></a></li>
+                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> Political Climate<span class="pull-right toggle-nav btn btn-sm btn-info" id="#">JSON</span></div></a></li>
                         <li class="divider"></li>
-                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> New Task<span class="pull-right text-muted small">4 minutes ago</span></div></a></li>
+                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> Democracy &amp; Institutions<span class="pull-right toggle-nav btn btn-sm btn-info" id="#">JSON</span></div></a></li>
                         <li class="divider"></li>
-                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> Server Rebooted<span class="pull-right text-muted small">4 minutes ago</span></div></a></li>
-                        <!--<li class="divider"></li>
-                        <li><a class="text-center" href="#"><strong>See All Alerts</strong><i class="fa fa-angle-right"></i></a></li>-->
+                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> Electoral Issues<span class="pull-right toggle-nav btn btn-sm btn-info" id="#">JSON</span></div></a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> Voter Participation<span class="pull-right toggle-nav btn btn-sm btn-info" id="#">JSON</span></div></a></li>
                     </ul>
                     <!-- /.dropdown-alerts -->
                 </li>
@@ -300,13 +300,13 @@
                                 <li><a href="../ei-legitimacy-elections-2014/index.html">Legitimacy of 2014 Elections</a></li>
                                 <li><a href="../ei-legitimacy-elections-voters/index.html">Legitimacy of 2014 Elections - Voters</a></li>
                                 <li><a href="../ei-integrity-results/index.html">Integrity of 2014 Results</a></li>
-                                <li><a href="#">Audit &amp; Confidence in Results</a></li>
-                                <li><a href="#">Biggest Election Successes</a></li>
-                                <li><a href="#">Biggest Election Problems</a></li>
-                                <!--<li><a href="#">Voter Freedom in 2014 Elections</p></li>-->
-                                <li><a href="#">Need for Electoral Reform</a></li>
-                                <li><a href="#">Ethnicity &amp; Elections</a></li>
-                                <li><a href="#">Women &amp; Elections</a></li>
+                                <li><a href="../ei-audit-results/index.html">Audit &amp; Confidence in Results</a></li>
+                                <li><a href="../ei-election-successes/index.html">Biggest Election Successes</a></li>
+                                <li><a href="../ei-election-problems/index.html">Biggest Election Problems</a></li>
+                                <li><a href="../ei-reform-parliamentary/index.html">Need for Electoral Reform</a></li>
+                                <li><a href="../ei-reform-important/index.html">Important Electoral Reforms</a></li>
+                                <li><a href="../ei-ethnicity-elections/index.html">Ethnicity &amp; Elections</a></li>
+                                <li><a href="../ei-women-elections/index.html">Women &amp; Elections</a></li>
                                 
 
                                 <!--<li><a href="#">Factors Preventing Womens' Participation</a></li>
@@ -327,8 +327,8 @@
         svg {
             display: block;
             float: left;
-            height: 500px;
-            width: 1100px;
+            height: 550px;
+            width: 500px;
         } 
 
 /*
@@ -351,6 +351,7 @@
             </div>
                     
                      <svg id="chart1" class="with-3d-shadow with-transitions"></svg>
+                     <svg id="chart2" class="with-3d-shadow with-transitions"></svg>
                     
 
                 <div id="menu-wrapper">
@@ -374,7 +375,13 @@
 
     <script>
    
-   var data = [
+var data1 = [
+        {key: "Yes", y: 62.1},
+        {key: "No", y: 29.7},
+        {key: "Don't Know", y: 8.1}
+    ];
+
+   var data2 = [
     {
         "key": "Yes",
         "color": "#005288", //blue
@@ -461,11 +468,32 @@
     }
 ]
     
+
 nv.addGraph(function() {
-  var chart = nv.models.multiBarChart()
+        var chart = nv.models.pieChart()
+            .x(function(d) { return d.key })
+            .y(function(d) { return d.y })
+            .color(["#005288", "#800000", "gray"]) 
+            .labelType("percent")
+            //.tooltips(false)
+            .tooltipContent(function(key, y, e, graph) {
+                return '<h5 style="padding: 5px; text-align: center">' + key + '</h5>'
+                        + '<p style="padding: 5px;">' +  y + '%</p>';
+            })
+            //.width(width)
+            //.height(height);
+        d3.select("#chart1")
+            .datum(data1)
+            .transition().duration(1200)
+            .call(chart);
+        return chart;
+    });
+
+nv.addGraph(function() {
+  var chart = nv.models.multiBarHorizontalChart()
       .x(function(d) { return d.label })
       .y(function(d) { return d.value / 100 })
-      //.margin({left: 100})
+      .margin({left: 100})
       /*.tooltipContent(function(key, x, y, e, graph) {
         return '<h5 style="text-align:center; padding:0px; color:#000; font-weight: 700">' + key + " (" + x + ")</h5><h4 style='text-align: center; color: #000; font-weight: 700;'>" + y + '</h5>'
     });*/
@@ -482,8 +510,8 @@ nv.addGraph(function() {
   //chart.xAxis
     //.tickFormat(d3.format('d'));
 
-  d3.select('#chart1')
-      .datum(data)
+  d3.select('#chart2')
+      .datum(data2)
       .transition().duration(1200)
       .call(chart);
 

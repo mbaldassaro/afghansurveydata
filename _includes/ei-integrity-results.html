@@ -5,8 +5,8 @@
         svg {
             display: block;
             float: left;
-            height: 500px;
-            width: 1100px;
+            height: 550px;
+            width: 500px;
         } 
 
 /*
@@ -29,6 +29,7 @@
             </div>
                     
                      <svg id="chart1" class="with-3d-shadow with-transitions"></svg>
+                     <svg id="chart2" class="with-3d-shadow with-transitions"></svg>
                     
 
                 <div id="menu-wrapper">
@@ -52,7 +53,13 @@
 
     <script>
    
-   var data = [
+var data1 = [
+        {key: "Yes", y: 62.1},
+        {key: "No", y: 29.7},
+        {key: "Don't Know", y: 8.1}
+    ];
+
+   var data2 = [
     {
         "key": "Yes",
         "color": "#005288", //blue
@@ -139,11 +146,32 @@
     }
 ]
     
+
 nv.addGraph(function() {
-  var chart = nv.models.multiBarChart()
+        var chart = nv.models.pieChart()
+            .x(function(d) { return d.key })
+            .y(function(d) { return d.y })
+            .color(["#005288", "#800000", "gray"]) 
+            .labelType("percent")
+            //.tooltips(false)
+            .tooltipContent(function(key, y, e, graph) {
+                return '<h5 style="padding: 5px; text-align: center">' + key + '</h5>'
+                        + '<p style="padding: 5px;">' +  y + '%</p>';
+            })
+            //.width(width)
+            //.height(height);
+        d3.select("#chart1")
+            .datum(data1)
+            .transition().duration(1200)
+            .call(chart);
+        return chart;
+    });
+
+nv.addGraph(function() {
+  var chart = nv.models.multiBarHorizontalChart()
       .x(function(d) { return d.label })
       .y(function(d) { return d.value / 100 })
-      //.margin({left: 100})
+      .margin({left: 100})
       /*.tooltipContent(function(key, x, y, e, graph) {
         return '<h5 style="text-align:center; padding:0px; color:#000; font-weight: 700">' + key + " (" + x + ")</h5><h4 style='text-align: center; color: #000; font-weight: 700;'>" + y + '</h5>'
     });*/
@@ -160,8 +188,8 @@ nv.addGraph(function() {
   //chart.xAxis
     //.tickFormat(d3.format('d'));
 
-  d3.select('#chart1')
-      .datum(data)
+  d3.select('#chart2')
+      .datum(data2)
       .transition().duration(1200)
       .call(chart);
 

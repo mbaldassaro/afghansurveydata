@@ -110,16 +110,16 @@
                     <ul class="dropdown-menu dropdown-alerts">
                         <!--<li><a href="#" class="topic"><div><i class="fa fa-comment fa-fw"></i> Download<span class="pull-right text-muted small">4 minutes ago</span></div></a></li>
                         <li class="divider"></li>-->
-                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> 3 New Followers<span class="pull-right text-muted small">12 minutes ago</span></div></a>
+                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> General Issues <span class="pull-right toggle-nav btn btn-sm btn-info" id="#">JSON</span></div></a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> Message Sent<span class="pull-right text-muted small">4 minutes ago</span></div></a></li>
+                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> Political Climate<span class="pull-right toggle-nav btn btn-sm btn-info" id="#">JSON</span></div></a></li>
                         <li class="divider"></li>
-                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> New Task<span class="pull-right text-muted small">4 minutes ago</span></div></a></li>
+                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> Democracy &amp; Institutions<span class="pull-right toggle-nav btn btn-sm btn-info" id="#">JSON</span></div></a></li>
                         <li class="divider"></li>
-                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> Server Rebooted<span class="pull-right text-muted small">4 minutes ago</span></div></a></li>
-                        <!--<li class="divider"></li>
-                        <li><a class="text-center" href="#"><strong>See All Alerts</strong><i class="fa fa-angle-right"></i></a></li>-->
+                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> Electoral Issues<span class="pull-right toggle-nav btn btn-sm btn-info" id="#">JSON</span></div></a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><div><i class="fa fa-file-text fa-fw"></i> Voter Participation<span class="pull-right toggle-nav btn btn-sm btn-info" id="#">JSON</span></div></a></li>
                     </ul>
                     <!-- /.dropdown-alerts -->
                 </li>
@@ -365,164 +365,55 @@
 
     <script>
    
-   var data = [
-    {
+   var data = [ 
+        {
         "key": "A Lot of Confidence",
         "color": "#005288", //blue
         "values": [
-            {   "label": "National Army",
-                "value": 73.9
-            },
-            {
-                "label": "Neighbors",
-                "value": 68.5
-            },
-            {
-                "label": "Religious Leaders",
-                "value": 63.0
-            },
-            {
-                "label": "President",
-                "value": 59.0
-            },
-            {
-                "label": "Police",
-                "value": 50.2
-            },
-            {
-                "label": "Media",
-                "value": 43.0
-            },
-            {   "label": "Village Leader",
-                "value": 49.2
-            },
-            {
-                "label": "Community Dev Council",
-                "value": 29.9
-            },
-            {
-                "label": "Provincial Council",
-                "value": 25.9
-            },
-            {
-                "label": "Provincial Governor",
-                "value": 39.5
-            },
-            {
-                "label": "Meshrano Jirga",
-                "value": 23.5
-            },
-            {
-                "label": "Wolesi Jirga",
-                "value": 21.2
-            },
-            {   "label": "Provincial IEC",
-                "value": 18.8
-            },
-            {
-                "label": "Political Parties",
-                "value": 16.9
-            },
-            {
-                "label": "IEC",
-                "value": 19.5
-            },
-            {
-                "label": "Local Commanders",
-                "value": 20.9
-            },
-            {
-                "label": "Provincial IECC",
-                "value": 13.9
-            },
-            {
-                "label": "IECC",
-                "value": 14.9
-            },
-            {
-                "label": "Taliban",
-                "value": 2.6
-            }
-        ]
-    },
-
-    {
+            { "label": "National Army", "value": 73.9 },
+            { "label": "Neighbors", "value": 68.5 },
+            { "label": "Religious Leaders", "value": 63.0 },
+            { "label": "President", "value": 59.0 },
+            { "label": "Police", "value": 50.2 },
+            { "label": "Media", "value": 43.0 },
+            { "label": "Village Leader", "value": 49.2 },
+            { "label": "Community Dev Council", "value": 29.9 },
+            { "label": "Provincial Council", "value": 25.9 },
+            { "label": "Provincial Governor", "value": 39.5 },
+            { "label": "Meshrano Jirga", "value": 23.5 },
+            { "label": "Wolesi Jirga", "value": 21.2 },
+            { "label": "Provincial IEC", "value": 18.8 },
+            { "label": "Political Parties", "value": 16.9 },
+            { "label": "IEC", "value": 19.5},
+            { "label": "Local Commanders", "value": 20.9 },
+            { "label": "Provincial IECC", "value": 13.9 },
+            { "label": "IECC", "value": 14.9 },
+            { "label": "Taliban", "value": 2.6 }
+        ] 
+        },
+        {
         "key": "Some Confidence",
         "color": "#7AA9DD", //light blue
         "values": [
-            {   "label": "National Army",
-                "value": 22.1
-            },
-            {
-                "label": "Neighbors",
-                "value": 26.9
-            },
-            {
-                "label": "Religious Leaders",
-                "value": 32.1
-            },
-            {
-                "label": "President",
-                "value": 34.6
-            },
-            {
-                "label": "Police",
-                "value": 39.2
-            },
-            {
-                "label": "Media",
-                "value": 45.5
-            },
-            {   "label": "Village Leader",
-                "value": 38.5
-            },
-            {
-                "label": "Community Dev Council",
-                "value": 53.8
-            },
-            {
-                "label": "Provincial Council",
-                "value": 55.8
-            },
-            {
-                "label": "Provincial Governor",
-                "value": 41.7
-            },
-            {
-                "label": "Meshrano Jirga",
-                "value": 52.9
-            },
-            {
-                "label": "Wolesi Jirga",
-                "value": 50.5
-            },
-            {   "label": "Provincial IEC",
-                "value": 46.6
-            },
-            {
-                "label": "Political Parties",
-                "value": 47.2
-            },
-            {
-                "label": "IEC",
-                "value": 44.0
-            },
-            {
-                "label": "Local Commanders",
-                "value": 40.4
-            },
-            {
-                "label": "Provincial IECC",
-                "value": 46.4
-            },
-            {
-                "label": "IECC",
-                "value": 44.0
-            },
-            {
-                "label": "Taliban",
-                "value": 7.2
-            }
+            { "label": "National Army", "value": 22.1 },
+            { "label": "Neighbors", "value": 26.9 },
+            { "label": "Religious Leaders", "value": 32.1 },
+            { "label": "President", "value": 34.6 },
+            { "label": "Police", "value": 39.2 },
+            { "label": "Media", "value": 45.5 },
+            { "label": "Village Leader", "value": 38.5 },
+            { "label": "Community Dev Council", "value": 53.8 },
+            { "label": "Provincial Council", "value": 55.8 },
+            { "label": "Provincial Governor", "value": 41.7 },
+            { "label": "Meshrano Jirga", "value": 52.9 },
+            { "label": "Wolesi Jirga", "value": 50.5 },
+            { "label": "Provincial IEC", "value": 46.6 },
+            { "label": "Political Parties", "value": 47.2 },
+            { "label": "IEC", "value": 44.0 },
+            { "label": "Local Commanders", "value": 40.4 },
+            { "label": "Provincial IECC", "value": 46.4 },
+            { "label": "IECC", "value": 44.0 },
+            { "label": "Taliban", "value": 7.2 }
         ]
     }
 ]
