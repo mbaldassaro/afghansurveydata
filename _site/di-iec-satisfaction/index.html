@@ -297,8 +297,8 @@
                             <ul class="nav nav-second-level">
                                 <li><a href="../di-democracy-satisfaction/index.html">Satisfaction with Democracy</a></li>
                                 <li><a href="../di-elections-satisfaction/index.html">Satisfaction with Elections</a></li>
-                                <li><a href="../di-iec-satisfaction/index.html">Satisfaction with IEC</a></li>
-                                <li><a href="../di-iecc-satisfaction/index.html">Satisfaction with IECC</a></
+                                <li><a href="../di-iec-satisfaction/index.html">Satisfaction with IEC &amp; IECC</a></li>
+                                <!--<li><a href="../di-iecc-satisfaction/index.html">Satisfaction with IECC</a></li>-->
                                 <li><a href="../di-confidence-institutions/index.html">Confidence in Institutions &amp; Authorities</a></li>
                                 <li><a href="../di-political-reform/index.html">Political System Reform</a></li>
                                 <li><a href="../di-ethnicity-politics/index.html">Importance of Ethnicity in Politics</a></li>
@@ -311,7 +311,7 @@
 
             
                                 
-<!-- Democracy & Institutions - Satisfaction with IEC Performance -->
+<!-- Democracy & Institutions - Satisfaction with IEC & IECC Performance -->
 
 <style>
       
@@ -336,7 +336,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     
-                    <h1 class="page-header"><strong>SATISFIED WITH IEC PERFORMANCE IN 2014 ELECTIONS</strong></h1>
+                    <h1 class="page-header"><strong>SATISFIED WITH IEC &amp; IECC PERFORMANCE IN 2014 ELECTIONS</strong></h1>
 
                 </div>
             </div>
@@ -367,31 +367,23 @@
    
    var data = [
     {
-        "key": "No",
+        "key": "IEC - No",
         "color": "#800000", //red
         "values": [
             {   "label": "National Average",
                 "value": 37.4
             },
             {
-                "label": "South",
-                "value": 13.2
-            },
-            {
                 "label": "Central",
                 "value": 38.5
             },
             {
-                "label": "West",
-                "value": 57.5
-            },
-            {
-                "label": "South East",
-                "value": 34.7
-            },
-            {
                 "label": "Central Highlands",
                 "value": 46.4
+            },
+            {
+                "label": "East",
+                "value": 24.2
             },
             {
                 "label": "North",
@@ -402,38 +394,37 @@
                 "value": 28.7
             },
             {
-                "label": "East",
-                "value": 24.2
-
+                "label": "South",
+                "value": 13.2
+            }, 
+            {
+                "label": "South East",
+                "value": 34.7
+            },
+            {
+                "label": "West",
+                "value": 57.5
             }
-        ]
+        ]    
     },
     {
-        "key": "Yes",
+        "key": "IEC - Yes",
         "color": "#005288", //blue
         "values": [
             {   "label": "National Average",
                 "value": 61.3
-            },
-            {
-                "label": "South",
-                "value": 86.3
-            },
+            },    
             {
                 "label": "Central",
                 "value": 57.9
             },
             {
-                "label": "West",
-                "value": 42.5
-            },
-            {
-                "label": "South East",
-                "value": 65.3
-            },
-            {
                 "label": "Central Highlands",
                 "value": 53.6
+            }, 
+            {
+                "label": "East",
+                "value": 75.8
             },
             {
                 "label": "North",
@@ -444,9 +435,98 @@
                 "value": 68.1
             },
             {
+                "label": "South",
+                "value": 86.3
+            },
+            {
+                "label": "South East",
+                "value": 65.3
+            },
+            {
+                "label": "West",
+                "value": 42.5
+            }
+        ]
+    },
+    {
+        "key": "IECC - No",
+        "color": "#BC8F8F", //light red
+        "values": [
+            {   "label": "National Average",
+                "value": 37.0
+            },            
+            {
+                "label": "Central",
+                "value": 36.6
+            },
+            {
+                "label": "Central Highlands",
+                "value": 58.8
+            },
+            {
                 "label": "East",
-                "value": 75.8
-
+                "value": 15.9
+            },
+            {
+                "label": "North",
+                "value": 41.4
+            },
+            {
+                "label": "North East",
+                "value": 35.7
+            },
+            {
+                "label": "South",
+                "value": 20.2
+            }, 
+            {
+                "label": "South East",
+                "value": 29.3
+            }, 
+            {
+                "label": "West",
+                "value": 61.9
+            }
+        ]
+    },
+    {
+        "key": "IECC - Yes",
+        "color": "#7AA9DD", //light blue
+        "values": [
+            {   "label": "National Average",
+                "value": 61.6
+            },
+            {
+                "label": "Central",
+                "value": 61.8
+            },
+            {
+                "label": "Central Highlands",
+                "value": 41.2
+            },
+            {
+                "label": "East",
+                "value": 82.9
+            },
+            {
+                "label": "North",
+                "value": 56.8
+            },
+            {
+                "label": "North East",
+                "value": 60.1
+            },
+            {
+                "label": "South",
+                "value": 78.0
+            },
+            {
+                "label": "South East",
+                "value": 70.2
+            },
+            {
+                "label": "West",
+                "value": 38.1
             }
         ]
     }
