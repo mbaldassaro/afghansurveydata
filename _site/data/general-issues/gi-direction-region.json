@@ -1,0 +1,161 @@
+[
+    {
+        "key": "Wrong Direction",
+        "color": "#800000", 
+        "values": [
+             {
+                "label": "Central",
+                "value": 11.8
+            },    
+            {
+                "label": "Central Highlands",
+                "value": 5.9
+            },
+            {
+                "label": "East",
+                "value": 8.0
+
+            },
+            {
+                "label": "North",
+                "value": 12.0
+            },
+            {
+                "label": "North East",
+                "value": 10.8
+            },
+            
+            {
+                "label": "South",
+                "value": 18.2
+            }, 
+            {
+                "label": "South East",
+                "value": 11.0
+            },
+            {
+                "label": "West",
+                "value": 16.9
+            }
+        ]
+    },
+    {
+        "key": "Some Right / Some Wrong",
+        "color": "#8B4789", 
+        "values": [
+            {
+                "label": "Central",
+                "value": 32.2
+            },
+            {
+                "label": "Central Highlands",
+                "value": 41.9
+            },
+            {
+                "label": "East",
+                "value": 22.3
+
+            }, 
+            {
+                "label": "North",
+                "value": 30.1
+            },
+            {
+                "label": "North East",
+                "value": 48.9
+            },
+            {
+                "label": "South",
+                "value": 25.0
+            },
+            
+            {
+                "label": "South East",
+                "value": 39.2
+            },
+            {
+                "label": "West",
+                "value": 31.4
+            }
+        ]
+    }, 
+    {
+        "key": "Right Direction",
+        "color": "#005288", 
+        "values": [
+            {
+                "label": "Central",
+                "value": 50.8
+            },
+          
+            {
+                "label": "Central Highlands",
+                "value": 46.0
+            },
+            {
+                "label": "East",
+                "value": 67.5
+
+            },
+            {
+                "label": "North",
+                "value": 39.9
+            },
+            {
+                "label": "North East",
+                "value": 31.8
+            },  
+            {
+                "label": "South",
+                "value": 55.1
+            },  
+            {
+                "label": "South East",
+                "value": 48.3
+            }, 
+            {
+                "label": "West",
+                "value": 50.2
+            }
+        ]
+    },
+    {
+        "key": "Don't Know",
+        "color": "gray", 
+        "values": [
+            {
+                "label": "Central",
+                "value": 5.1
+            },
+            {
+                "label": "Central Highlands",
+                "value": 6.2
+            },
+            {
+                "label": "East",
+                "value": 2.2
+
+            },
+            {
+                "label": "North",
+                "value": 17.3
+            },
+            {
+                "label": "North East",
+                "value": 8.5
+            },
+            {
+                "label": "South",
+                "value": 1.8
+            },
+            {
+                "label": "South East",
+                "value": 1.6
+            },
+            {
+                "label": "West",
+                "value": 0.7
+            }
+        ]
+    }
+]
