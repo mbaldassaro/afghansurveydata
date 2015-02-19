@@ -1,0 +1,44 @@
+[   
+    {
+        "key": "Can Secure Resources for Community",
+        "color": "#005288", 
+        "values": [
+            { "label": "Central", "value": 52.3 },
+            { "label": "Central Highlands", "value": 49.2 },
+            { "label": "East", "value": 54.9 },
+            { "label": "North", "value": 32.1 },
+            { "label": "North East", "value": 45.1 },
+            { "label": "South", "value": 47.5 },
+            { "label": "South East", "value": 47.2 },
+            { "label": "West","value": 36.9 }            
+        ]
+    },
+    {
+        "key": "Ethnicity",
+        "color": "#800000", 
+        "values": [
+            { "label": "Central", "value": 14.9 },
+            { "label": "Central Highlands", "value": 24.2 },
+            { "label": "East", "value": 16.4 },
+            { "label": "North", "value": 32.9 },
+            { "label": "North East", "value": 22.5 },
+            { "label": "South", "value": 23.5 },
+            { "label": "South East", "value": 23.4 },
+            { "label": "West","value": 30.3 }            
+        ]
+    },
+    {
+        "key": "Reputation",
+        "color": "#bc8f8f", 
+        "values": [           
+            { "label": "Central", "value": 27.6 },  
+            { "label": "Central Highlands", "value": 22.0 },
+            { "label": "East", "value": 25.7 },
+            { "label": "North", "value": 25.9 },
+            { "label": "North East", "value": 25.3 },
+            { "label": "South", "value": 27.0 },
+            { "label": "South East", "value": 27.9 },
+            { "label": "West", "value": 29.7 }
+        ] 
+    }
+]

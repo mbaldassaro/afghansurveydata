@@ -1,0 +1,24 @@
+[ 
+        {
+        "key": "Strongly Agree",
+        "color": "#005288", 
+        "values": [
+            { "label": "Right to Participate in Elections", "value": 76.5 },
+            { "label": "Should Register to Vote", "value": 76.3 },
+            { "label": "Can Decide For Whom to Vote", "value": 70.3 },
+            { "label": "Should be More Engaged", "value": 38.1 },
+            { "label": "Men Should Vote on Behalf of Women", "value": 9.3 }
+            ] 
+        },
+        {
+        "key": "Somewhat Agree",
+        "color": "#7AA9DD", 
+        "values": [
+            { "label": "Right to Participate in Elections", "value": 17.5 },
+            { "label": "Should Register to Vote", "value": 17.6 },
+            { "label": "Can Decide For Whom to Vote", "value": 22.3 },
+            { "label": "Should be More Engaged", "value": 38.1 },
+            { "label": "Men Should Vote on Behalf of Women", "value": 9.0 }
+        ]
+    }
+]

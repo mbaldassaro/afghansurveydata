@@ -1,0 +1,168 @@
+[
+    {
+        "key": "Strongly Disagree",
+        "color": "#800000", 
+        "values": [
+            {   "label": "National Average",
+                "value": 15.1
+            },
+            {
+                "label": "Central",
+                "value": 16.5
+            },
+            {
+                "label": "Central Highlands",
+                "value": 18.8
+            },
+            {
+                "label": "East",
+                "value": 4.8
+            },
+            {
+                "label": "North",
+                "value": 9.1
+            },
+            {
+                "label": "North East",
+                "value": 13.7
+            },
+            {
+                "label": "South",
+                "value": 3.6
+            },
+            {
+                "label": "South East",
+                "value": 8.7
+            },
+            {
+                "label": "West",
+                "value": 33.7
+            }
+            
+        ]
+    },
+    {
+        "key": "Somewhat Disagree",
+        "color": "#BC8F8F", 
+        "values": [
+            {   "label": "National Average",
+                "value": 15.2
+            },
+            {
+                "label": "Central",
+                "value": 16.4
+            },
+            {
+                "label": "Central Highlands",
+                "value": 12.1
+            },
+            {
+                "label": "East",
+                "value": 6.0
+            },
+            {
+                "label": "North",
+                "value": 21.0
+            },
+            {
+                "label": "North East",
+                "value": 15.0
+            },
+            {
+                "label": "South",
+                "value": 22.0
+            },
+            {
+                "label": "South East",
+                "value": 30.9
+            },
+            {
+                "label": "West",
+                "value": 24.7
+            }
+            
+        ]
+    },
+    {
+        "key": "Somewhat Agree",
+        "color": "#7AA9DD",
+        "values": [
+            {   "label": "National Average",
+                "value": 42.6
+            },            
+            {
+                "label": "Central",
+                "value": 33.5
+            },  
+            {
+                "label": "Central Highlands",
+                "value": 23.9
+            },
+            {
+                "label": "East",
+                "value": 44.1
+            },
+            {
+                "label": "North",
+                "value": 42.3
+            },
+            {
+                "label": "North East",
+                "value": 49.0
+            },
+            {
+                "label": "South",
+                "value": 56.1
+            },
+            {
+                "label": "South East",
+                "value": 42.8
+            },
+            {
+                "label": "West",
+                "value": 31.0
+            }
+        ] 
+    },
+    {
+        "key": "Strongly Agree",
+        "color": "#005288", 
+        "values": [
+            {   "label": "National Average",
+                "value": 24.3
+            },
+            {
+                "label": "Central",
+                "value": 20.4
+            },
+            {
+                "label": "Central Highlands",
+                "value": 32.1
+            },
+            {
+                "label": "East",
+                "value": 35.3
+            },
+            {
+                "label": "North",
+                "value": 21.4
+            },
+            {
+                "label": "North East",
+                "value": 17.6
+            },
+            {
+                "label": "South",
+                "value": 17.9
+            },
+            {
+                "label": "South East",
+                "value": 15.9
+            },
+            {
+                "label": "West",
+                "value": 10.0
+            }            
+        ]
+    }
+]
