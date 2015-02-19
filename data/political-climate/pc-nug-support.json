@@ -1,0 +1,90 @@
+[
+    {
+        "key": "Yes",
+        "color": "#005288", 
+        "values": [
+            {   "label": "National Average",
+                "value": 85.1
+            },            
+            {
+                "label": "Central",
+                "value": 90.0
+            },
+            {
+                "label": "Central Highlands",
+                "value": 94.6
+            },
+            {
+                "label": "East",
+                "value": 85.9
+            },
+            {
+                "label": "North",
+                "value": 84.1
+            },
+            {
+                "label": "North East",
+                "value": 88.3
+            },
+            {
+                "label": "South",
+                "value": 59.4
+            },
+            {
+                "label": "South East",
+                "value": 87.2
+            },
+            {
+                "label": "West",
+                "value": 91.1
+            }
+            
+        ]
+    },
+    {
+        "key": "No",
+        "color": "#800000", 
+        "values": [
+            {   "label": "National Average",
+                "value": 12.0
+            },
+            
+            {
+                "label": "Central",
+                "value": 5.4
+            },
+            {
+                "label": "Central Highlands",
+                "value": 3.2
+            },
+            {
+                "label": "East",
+                "value": 13.1 
+
+            },
+            {
+                "label": "North",
+                "value": 6.7
+            },
+            {
+                "label": "North East",
+                "value": 10.8
+            },
+            {
+                "label": "South",
+                "value": 39.9
+            },
+            {
+                "label": "South East",
+                "value": 12.1
+            },
+            
+            {
+                "label": "West",
+                "value": 8.7
+            }
+    
+            
+        ]
+    }
+]

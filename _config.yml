@@ -5,7 +5,7 @@
 
 # url: http://localhost:4000
 title: Afghanistan Survey Data
-description: DI Afghanistan Survey Data Browser
+description: An open-source open data platform for analyzing and visualizing Democracy International public opinion research findings in Afghanistan.
 author:
   name: mbaldassaro
   email: mbaldassaro@gmail.com
