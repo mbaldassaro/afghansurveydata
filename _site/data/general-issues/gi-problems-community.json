@@ -1,0 +1,158 @@
+[
+    {
+        "key": "Lack of Electricity",
+        "values": [
+            {
+                "label": "Biggest Problem",
+                "value": 23.0
+            },
+            {
+                "label": "Second Biggest Problem",
+                "value": 10.2
+            }
+        ]
+    },
+    {
+        "key": "Unpaved Roads",
+        "values": [
+            {
+                "label": "Biggest Problem",
+                "value": 14.3
+            },
+            {
+                "label": "Second Biggest Problem",
+                "value": 11.5
+            }
+        ]
+    },
+    {
+        "key": "Poor Economy",
+        "values": [
+            {
+                "label": "Biggest Problem",
+                "value": 12.8
+            },
+            {
+                "label": "Second Biggest Problem",
+                "value": 12.7
+            }
+        ]
+    },
+    {
+        "key": "Unemployment",
+        "values": [
+            {
+                "label": "Biggest Problem",
+                "value": 12.2
+            },
+            {
+                "label": "Second Biggest Problem",
+                "value": 26.5
+            }
+        ]
+    },
+    {
+        "key": "Lack of Potable Water",
+        "values": [
+            {
+                "label": "Biggest Problem",
+                "value": 8.9
+            },
+            {
+                "label": "Second Biggest Problem",
+                "value": 5.0
+            }
+        ]
+    },
+    {
+        "key": "Weak Government",
+        "values": [
+            {
+                "label": "Biggest Problem",
+                "value": 8.0
+            },
+            {
+                "label": "Second Biggest Problem",
+                "value": 2.0
+            }
+        ]
+    },
+    {
+        "key": "Official Corruption",
+        "values": [
+            {
+                "label": "Biggest Problem",
+                "value": 7.6
+            },
+            {
+                "label": "Second Biggest Problem",
+                "value": 2.4
+            }
+        ]
+    },
+    {
+        "key": "Security Issues",
+        "values": [
+            {
+                "label": "Biggest Problem",
+                "value": 4.9
+            },
+            {
+                "label": "Second Biggest Problem",
+                "value": 6.7
+            }
+        ]
+    },
+    {
+        "key": "Lack of Health Care",
+        "values": [
+            {
+                "label": "Biggest Problem",
+                "value": 4.3
+            },
+            {
+                "label": "Second Biggest Problem",
+                "value": 7.3
+            }
+        ]
+    },
+    {
+        "key": "Lack of Education",
+        "values": [
+            {
+                "label": "Biggest Problem",
+                "value": 2.2
+            },
+            {
+                "label": "Second Biggest Problem",
+                "value": 7.2
+            }
+        ]
+    },
+    {       
+        "key": "Crime",
+        "values": [
+            {
+                "label": "Biggest Problem",
+                "value": 1.1
+            },
+            {
+                "label": "Second Biggest Problem",
+                "value": 4.0
+            }
+        ]
+        },
+        {
+        "key": "Ethnic Division",
+        "values": [
+            {
+                "label": "Biggest Problem",
+                "value": 0.8
+            },
+            {
+                "label": "Second Biggest Problem",
+                "value": 2.0
+            }
+        ]
+        }
+]
