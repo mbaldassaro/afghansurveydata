@@ -195,7 +195,7 @@ background-color: #000;
   min-height: 200;
   height: 380px;
   background-color: #000;
-  margin: -10px -105;
+  margin: -10px -107;
 }
 
 .navbar-top-links .dropdown-tasks {
@@ -204,7 +204,7 @@ background-color: #000;
   min-height: 200;
   height: 380px;
   background-color: #000;
-  margin: -10px -43.5;
+  margin: -10px -45.5;
 }
 
 .navbar-top-links .dropdown-alerts {
@@ -213,9 +213,10 @@ background-color: #000;
     min-height: 0;
     height: 215px;
     background-color: #000;
-    margin-top: -2px;
+    margin: -10px -55px;
 }
 
+/*
 .navbar-top-links .dropdown-messages {
     margin-left: 5px;
 }
@@ -227,6 +228,7 @@ background-color: #000;
 .navbar-top-links .dropdown-alerts {
     margin-left: -123px;
 }
+*/
 
 .navbar-top-links .dropdown-user {
     right: 58;
