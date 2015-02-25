@@ -1,10 +1,9 @@
 body {
     background-color: #fff;
     background-image: url(../img/AfSurvBackground.jpg);
-    min-width: 100%;
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
-    position: absolute;
+    min-width: 100%;
     top: 0;
     left: 0;
     z-index: 70;
@@ -181,7 +180,6 @@ b, strong {
   width: 500px;
   min-width: 100;
   min-height: 200;
-  height: 380px;
   background-color: #000;
   margin: -10px -107;
 }
@@ -190,7 +188,6 @@ b, strong {
   width: 500px;
   min-width: 100;
   min-height: 200;
-  height: 380px;
   background-color: #000;
   margin: -10px -45.5;
 }
@@ -199,7 +196,6 @@ b, strong {
     width: 260px;
     min-width: 0;
     min-height: 0;
-    height: 215px;
     background-color: #000;
     margin: -10px -55px;
 }
