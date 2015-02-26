@@ -216,6 +216,11 @@ b, strong {
     background-color: #000;
 }
 
+.navbar-right {
+  float: right!important;
+  margin-right: 0px!important;
+}
+
 .sidebar .sidebar-nav.navbar-collapse {
     padding-right: 0;
     padding-left: 0;
