@@ -79,7 +79,7 @@ b, strong {
 /* added */
 #site-menu {
     width: 1000px;
-    height: 100%;
+    /*height: 100%;*/
     position: absolute;
     top: 0;
     left: -1000px;
@@ -107,6 +107,11 @@ b, strong {
     }
 }
 
+#info {
+margin-top: -55px;
+background-color: #005288;
+opacity: 0.8;
+}
 
 .navbar-brand {
     height: 51px !important;
