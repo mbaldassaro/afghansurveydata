@@ -1,0 +1,343 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An open-source, open data platform for analyzing and visualizing Democracy International public opinion research findings in Afghanistan.">
+    <meta name="mbaldassaro" content="">
+
+    <meta property="og:image" content="http://mbaldassaro.github.io/afghansurveydata/img/cover.png">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="768">
+    <meta property="og:title" content="Afghanistan Survey Data">
+    <meta property="og:description" content="An open-source, open data platform for analyzing and visualizing Democracy International public opinion research findings in Afghanistan.">
+
+    <title>Afghanistan Survey Data</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- build:css(app) /dist/main.css -->
+    <link rel="stylesheet" href="../dist/main.css">
+    <!-- Custom CSS -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">   
+    <!-- Maps CSS - Leaflet -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css">
+    <!-- Main.JS Custom Template for Bootstrap Navbar -->
+    <script src="../dist/main.js"></script>
+    <!-- JQUERY -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <!--<script src="../bower components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <!-- D3 + NVD3 Libraries -->
+
+    <link href="../bower_components/nvd3/build/nv.d3.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
+    <script src="../bower_components/nvd3/build/nv.d3.js"></script>
+    <script src="../bower_components/nvd3/src/stream_layers.js"></script>
+    <script src="../bower_components/nvd3/src/interactiveLayer.js"></script>
+    <script src="../bower_components/nvd3/src/utils.js"></script>
+    <script src="../bower_components/nvd3/src/tooltip.js"></script>
+    <!--<script src="../bower_components/nvd3/src/models/legend.js"></script>
+    <script src="../bower_components/nvd3/src/models/axis.js"></script>
+    <script src="../bower_components/nvd3/src/models/scatter.js"></script>
+    <script src="../bower_components/nvd3/src/models/line.js"></script>
+    <script src="../bower_components/nvd3/src/models/lineChart.js"></script>-->
+    <script src="../bower_components/nvd3/src/models/multiBarHorizontal.js"></script>
+    <script src="../bower_components/nvd3/src/models/multiBarHorizontalChart.js"></script>
+    <!--<script src="../bower_components/nvd3/src/models/multiBarChart.js"></script>
+    <script src="../bower_components/nvd3/src/models/multiBar.js"></script>-->
+ 
+
+
+    
+
+</head>
+
+<div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="../img/flag.png" id="brand"/><a class="navbar-brand" href="../dashboard/index.html">  Afghanistan Survey Data</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <a href="http://www.democracyinternational.com" target="_blank"><img src="../img/DI-Logo-with-Text-Transparent.png"id="logo" height=25 width=125></a>
+                
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" id="navhover" href="#"><i class="fa fa-info fa-fw"></i>  <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li><a class="topic" style="text-align: justify;"><div><h4 style="text-align: center;">About</h4></div><div><h5>Since 2009, Democracy International (DI) has worked to support the strengthening of Afghanistan’s electoral processes, both through international election observation missions as well as by supporting domestic advocacy for electoral reform. Currently, DI implements USAID’s Afghanistan Electoral Reform and Civic Advocacy program (AERCA). AERCA’s two primary components are to support Afghan-led advocacy efforts for electoral and democratic reform and to conduct research that can inform and encourage the debate on reform. To contribute to the achievement of these objectives, DI has conducted some of the most comprehensive public opinion research on Afghan democracy to date.<br/><br/>DI conducted this survey on the heels of the formation of the National Unity Government in order to understand the Afghan public’s attitudes about democracy and the elections, the impact and reach of civic education efforts, and confidence in political institutions, among other things. In its presentation of the findings from this survey, DI uses its previous nationwide survey data from 2012 and 2013 as points for comparison, where possible. The findings from this survey can help inform the Afghan and international community on future engagement on issues related to democracy, elections, and civic education.</h5></div></a></li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown" id="top"><a class="dropdown-toggle" data-toggle="dropdown" id="navhover" href="#"><i class="fa fa-list-alt fa-fw"></i>  <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li><a class="topic" style="text-align: justify;"><div><!--<p>--><h4 style="text-align: center;">Methodology</h4></div><div><h5>According to the Central Statistic Organization of Afghanistan (Afghanistan Statistical Yearbook 2013-14), 48.28 percent of the population is 18 years of age or older. With a sample size of 4,020 out of an adult population of approximately 12,565,785 the survey has a margin of error of ±1.55% at a 95% confidence level with an estimate of 50 percent response distribution. To minimize the margin of error at the provincial level, DI created a random sampling plan which was stratified by province, urban-rural divide, and gender using the 2013–14 population data from Afghanistan’s Central Statistics Organization as a reference. A total of 402 sampling points were distributed with 10 interviews per each sample point. 
+                            <br/><br/>
+                        Soft Power Solutions (SPS), an Afghan research firm DI sub-contracted to conduct the fieldwork for this survey, recruited and deployed 143 enumerators (72 male and 71 female). DI dispatched 36 quality-control officers to verify the fieldwork conducted through direct observation, verification, and review through a standard back-check form. At least one quality-control officer was deployed in each province. DI pilot-tested the 82-question instrument in rural and urban areas before beginning fieldwork to ensure the clarity of individual questions and to identify issues that might affect the survey quality. The data collection commenced on October 31, 2014 and was completed by November 28, 2014.
+<!--</span>--></h5></div></a></li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" id="navhover" href="#"><i class="fa fa-download fa-fw"></i>  <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        
+                        <li><a href="https://github.com/mbaldassaro/afghansurveydata/raw/gh-pages/data/general-issues/general-issues.zip" download class="topic"><div><i class="fa fa-file-text fa-fw"></i> General Issues <span class="pull-right btn btn-sm btn-info" id="#">JSON</span></div></a>
+                        </li>
+                      
+                        <li><a href="https://github.com/mbaldassaro/afghansurveydata/raw/gh-pages/data/political-climate/political-climate.zip" download><div><i class="fa fa-file-text fa-fw"></i> Political Climate<span class="pull-right btn btn-sm btn-info" id="#">JSON</span></div></a></li>
+                     
+                        <li><a href="https://github.com/mbaldassaro/afghansurveydata/raw/gh-pages/data/democracy-institutions/democracy-institutions.zip" download><div><i class="fa fa-file-text fa-fw"></i> Democracy &amp; Institutions<span class="pull-right btn btn-sm btn-info" id="#">JSON</span></div></a></li>
+                  
+                        <li><a href="https://github.com/mbaldassaro/afghansurveydata/raw/gh-pages/data/electoral-issues/electoral-issues.zip" download><div><i class="fa fa-file-text fa-fw"></i> Electoral Issues<span class="pull-right btn btn-sm btn-info" id="#">JSON</span></div></a></li>
+                        
+                        <li><a href="https://github.com/mbaldassaro/afghansurveydata/raw/gh-pages/data/voter-participation/voter-participation.zip" download><div><i class="fa fa-file-text fa-fw"></i> Voter Participation<span class="pull-right btn btn-sm btn-info" id="#">JSON</span></div></a></li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" id="navhover" href="#"><i class="fa fa-share-alt fa-fw"></i>  <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu dropdown-user"> 
+                        <iframe src="//www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fafghanistansurveydata.com&amp;layout=button" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowTransparency="true" height=20px></iframe>
+                        <li><a href="https://twitter.com/share" class="twitter-share-button" data-via="democracyintl" data-count="none">Tweet</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+                        <li><script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+<script type="IN/Share" data-url="http://afghanistansurveydata.com"></script></li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+  </div>      
+
+            
+<div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                       
+                        <li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Latest Survey<span class="fa fa-caret-left"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="#"><i class="fa fa-globe fa-fw"></i> General Issues<span class="fa fa-caret-left"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="../gi-successes/index.html">Successes in Past Ten Years</a></li>
+                                <li><a href="../gi-problems-national/index.html">Problems at National Level</a></li>
+                                <li><a href="../gi-problems-community/index.html">Problems at Community Level</a></li>
+                                <li><a href="../gi-direction/index.html">Direction of the Country</a></li>
+                                <li><a href="../gi-direction-region/index.html">Direction of the Country by Region</a></li>
+                                <li><a href="../gi-direction-right/index.html">Why Going in Right Direction</a></li>
+                                <li><a href="../gi-direction-wrong/index.html">Why Going in Wrong Direction</a></li>
+                                <li><a href="../gi-living-conditions/index.html">Living Conditions</a></li>
+                                <li><a href="../gi-security-situation/index.html">Security Situation</a></li>
+                            </ul>
+                        </li>
+
+                                <li><a href="#"><i class="fa fa-tachometer fa-fw"></i> Political Climate<span class="fa fa-caret-left"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="../pc-taliban-reconciliation/index.html">Support for Reconciliation with Taliban</a></li>
+                                <li><a href="../pc-international-withdrawal/index.html">Support for Withdrawal of International Forces</a></li>
+                                <li><a href="../pc-nug-support/index.html">Support for National Unity Government</a></li>
+                                <li><a href="../pc-nug-likelihood/index.html">Likelihood of National Unity Government Success</a></li>
+                                <li><a href="../pc-agreement-support/index.html">Support for Seven-Point Political Agreement</a></li>
+                            </ul> 
+                        </li>     
+
+                                <li><a href="#"><i class="fa fa-bank fa-fw"></i> Democracy &amp; Institutions<span class="fa fa-caret-left"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="../di-democracy-satisfaction/index.html">Satisfaction with Democracy</a></li>
+                                <li><a href="../di-elections-satisfaction/index.html">Satisfaction with Elections</a></li>
+                                <li><a href="../di-iec-satisfaction/index.html">Satisfaction with IEC &amp; IECC</a></li>
+                                <li><a href="../di-confidence-institutions/index.html">Confidence in Institutions &amp; Authorities</a></li>
+                                <li><a href="../di-political-reform/index.html">Political System Reform</a></li>
+                                <li><a href="../di-ethnicity-politics/index.html">Importance of Ethnicity in Politics</a></li>
+                            </ul>
+                        </li>
+                        
+                               <li><a href="#"><i class="fa fa-check fa-fw"></i> Voter Participation<span class="fa fa-caret-left"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="../vp-voted-elections/index.html">Voted in 2014 Elections</a></li>
+                                <li><a href="../vp-reasons-candidate/index.html">Reasons Voted for a Candidate</a></li>
+                                <li><a href="../vp-plan-vote/index.html">Plan to Vote in Parliamentary Elections</a></li>
+                                <li><a href="../vp-reasons-parliamentary/index.html">Reasons to Vote for Parliamentary Candidate</a></li>
+                                <li><a href="../vp-voter-challenges/index.html">Challenges to Voter Participation</a></li>
+                                <li><a href="../vp-women-challenges/index.html">Challenges to Women's Participation</a></li>
+                            </ul>
+                        </li> 
+                                
+                            </ul>
+                        </li>       
+                             
+                        <li><a href="#"><i class="fa fa-archive fa-fw"></i> Electoral Issues<span class="fa fa-caret-left"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="../ei-legitimacy-elections/index.html">Legitimacy of 2009 &amp; 2014 Elections</a></li>
+                                <li><a href="../ei-legitimacy-elections-2014/index.html">Legitimacy of 2014 Elections</a></li>
+                                <li><a href="../ei-legitimacy-elections-voters/index.html">Legitimacy of 2014 Elections by Voters</a></li>
+                                <li><a href="../ei-integrity-results/index.html">Integrity of 2014 Results</a></li>
+                                <li><a href="../ei-audit-results/index.html">Audit &amp; Confidence in Results</a></li>
+                                <li><a href="../ei-election-successes/index.html">Biggest Election Successes</a></li>
+                                <li><a href="../ei-election-problems/index.html">Biggest Election Problems</a></li>
+                                <li><a href="../ei-reform-parliamentary/index.html">Need for Electoral Reform</a></li>
+                                <li><a href="../ei-reform-important/index.html">Important Electoral Reforms</a></li>
+                                <li><a href="../ei-women-elections/index.html">Women &amp; Elections</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div> 
+<!-- Electoral Issues - Important Reforms to Improve Future Elections -->
+
+<style>
+      
+        svg {
+            display: block;
+            float: left;
+            height: 500px;
+            min-width: 100%;
+        } 
+
+/*
+  Minimum height and width is a good idea to prevent negative SVG dimensions...
+  For example width should be =< margin.left + margin.right + 1,
+  of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
+*/
+
+
+</style>
+
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <h1 class="page-header"><strong>IMPORTANT REFORMS TO IMPROVE FUTURE ELECTIONS</strong></h1>
+
+                </div>
+            </div>
+                    
+                     <svg id="chart1" class="with-3d-shadow with-transitions"></svg>
+                    
+
+                <div id="menu-wrapper">
+                    <div id="menu-canvas">
+                    <div id="site-menu"> 
+                    
+                        <h4>Bold Heading Topic</h4>
+                        <p>Put any text you want here. Style it however you want.</p>
+                    </div> 
+            
+                    
+                    <a href="#" class="toggle-nav btn btn-sm btn-primary" id="#"><i class="fa fa-info"></i></a>
+                    <a href="#" class="toggle-nav"></a>    
+                </div> 
+               </div>     
+            </div>
+        </div> 
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script>
+   
+   var data = [
+    {
+        "key": "Very Important",
+        "color": "#005288", //blue
+        "values": [
+            {   "label": "New Voter Registration System", "value": 58.9 },
+            {   "label": "IEC Reform", "value": 70.2 },
+            {   "label": "New Electoral System", "value": 66.8 }
+        ]
+    },
+    {
+        "key": "Important",
+        "color": "#7aa9dd", //lightblue
+        "values": [
+            {   "label": "New Voter Registration System", "value": 33.9 },
+            {   "label": "IEC Reform", "value": 24.8 },
+            {   "label": "New Electoral System", "value": 25.5 }
+        ]
+    },
+    {
+        "key": "Not Very Important",
+        "color": "#bc8f8f", //light red
+        "values": [
+            {   "label": "New Voter Registration System", "value": 4.0 },
+            {   "label": "IEC Reform", "value": 3.2 },
+            {   "label": "New Electoral System", "value": 4.5 }
+        ]
+    },
+    {
+        "key": "Not Important at All",
+        "color": "#800000", //red
+        "values": [
+            {   "label": "New Voter Registration System", "value": 1.5 },
+            {   "label": "IEC Reform", "value": 0.7 },
+            {   "label": "New Electoral System", "value": 1.3 }
+        ]
+    }
+]
+    
+nv.addGraph(function() {
+  var chart = nv.models.multiBarChart()
+      .x(function(d) { return d.label })
+      .y(function(d) { return d.value / 100 })
+      //.margin({left: 100})
+      /*.tooltipContent(function(key, x, y, e, graph) {
+        return '<h5 style="text-align:center; padding:0px; color:#000; font-weight: 700">' + key + " (" + x + ")</h5><h4 style='text-align: center; color: #000; font-weight: 700;'>" + y + '</h5>'
+    });*/
+
+      
+        //.showValues(false)
+        .tooltips(true)
+        //.barColor(d3.scale.category20().range())
+        //.stacked(true)
+        //.showControls(false);
+
+  chart.yAxis 
+    .tickFormat(d3.format('.1%'));
+  //chart.xAxis
+    //.tickFormat(d3.format('d'));
+
+  d3.select('#chart1')
+      .datum(data)
+      .transition().duration(1200)
+      .call(chart);
+
+  nv.utils.windowResize(chart.update);
+
+  chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+  return chart;
+});
+
+</script>
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script> 
+
+    <!-- Metis Menu Plugin JavaScript -->
+	<script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+	<script src="../dist/main.js"></script>
+
+    <!-- D3 + NVD3 Libraries -->
+    
+ 
