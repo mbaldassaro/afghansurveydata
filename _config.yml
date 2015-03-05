@@ -4,7 +4,7 @@
 # 3. config.yml
 
 url: http://afghanistansurveydata.com
-title: Afghanistan Survey Data
+title: Afghanistan Survey Data | Democracy International
 description: An open-source open data platform for analyzing and visualizing Democracy International public opinion research findings in Afghanistan.
 author:
   name: mbaldassaro
