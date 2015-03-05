@@ -3,12 +3,12 @@
 # 2. config.build.yml
 # 3. config.yml
 
-# url: http://localhost:4000
+url: http://afghanistansurveydata.com
 title: Afghanistan Survey Data
 description: An open-source open data platform for analyzing and visualizing Democracy International public opinion research findings in Afghanistan.
 author:
   name: mbaldassaro
-  email: mbaldassaro@gmail.com
+  email: mbaldassaro@democracyinternational.com
 
 # Grunt handles images and assets.
 exclude: ['y', 'y', 'y', 'y',
@@ -42,6 +42,6 @@ social:
   - title: facebook
     url: https://www.facebook.com/DemocracyInternational
   - title: linkedin
-    url:
+    url: https://www.linkedin.com/company/418569
 
 pygments: false
