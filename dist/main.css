@@ -12,6 +12,11 @@ body {
     font-family: Lato; 
 }
 
+#main {
+    height: 0px;
+    width: 0px;
+  }
+
 #brand {
   width: 45px;
   height: 30px;
