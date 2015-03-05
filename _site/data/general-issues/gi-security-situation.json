@@ -1,0 +1,212 @@
+[
+    {
+        "key": "Much Worse",
+        "color": "#800000", 
+        "values": [
+            {   "label": "National Average",
+                "value": 6.1
+            },
+            {
+                "label": "Central",
+                "value": 4.3
+            },
+            {
+                "label": "Central Highlands",
+                "value": 0.0
+            },
+            {
+                "label": "East",
+                "value": 5.1
+
+            },
+            {
+                "label": "North",
+                "value": 6.7
+            },
+            {
+                "label": "North East",
+                "value": 7.5
+            },
+            {
+                "label": "South",
+                "value": 2.3
+            },
+            {
+                "label": "South East",
+                "value": 7.2
+            },
+            {
+                "label": "West",
+                "value": 11.9
+            }
+  
+        ]
+    },
+    {
+        "key": "Little Worse",
+        "color": "#BC8F8F", 
+        "values": [
+            {   "label": "National Average",
+                "value": 16.6
+            },
+            {
+                "label": "Central",
+                "value": 8.7
+            },
+            {
+                "label": "Central Highlands",
+                "value": 0.8
+            },
+            {
+                "label": "East",
+                "value": 16.6
+            }, 
+            {
+                "label": "North",
+                "value": 26.0
+            },
+            {
+                "label": "North East",
+                "value": 19.6
+            },
+            {
+                "label": "South",
+                "value": 13.5
+            },
+            
+            {
+                "label": "South East",
+                "value": 18.9
+            },
+            {
+                "label": "West",
+                "value": 22.5
+            }            
+        ]
+    },
+    {
+        "key": "Same",
+        "color": "#8B4789", 
+        "values": [
+            {   "label": "National Average",
+                "value": 34.6
+            },
+            
+            {
+                "label": "Central",
+                "value": 33.1
+            },
+            {
+                "label": "Central Highlands",
+                "value": 79.8
+            },
+            {
+                "label": "East",
+                "value": 24.0
+
+            },
+            {
+                "label": "North",
+                "value": 32.0
+            },
+            {
+                "label": "North East",
+                "value": 33.7
+            },
+            {
+                "label": "South",
+                "value": 37.5
+            }, 
+            {
+                "label": "South East",
+                "value": 31.4
+            },
+            {
+                "label": "West",
+                "value": 37.8
+            }
+        ]
+    },
+    {
+        "key": "Little Better",
+        "color": "#7AA9DD", 
+        "values": [
+            {   "label": "National Average",
+                "value": 26.7
+            },
+            {
+                "label": "Central",
+                "value": 28.8
+            }, 
+            {
+                "label": "Central Highlands",
+                "value": 12.0
+            }, 
+            {
+                "label": "East",
+                "value": 29.0
+            },
+            {
+                "label": "North",
+                "value": 15.3
+            },
+            {
+                "label": "North East",
+                "value": 31.7
+            },
+            {
+                "label": "South",
+                "value": 35.6
+            },
+            {
+                "label": "South East",
+                "value": 30.3
+            },
+            {
+                "label": "West",
+                "value": 21.1
+            }
+          ]       
+    },
+    {
+        "key": "Much Better",
+        "color": "#005288", 
+        "values": [
+            {   "label": "National Average",
+                "value": 15.6
+            },
+            {
+                "label": "Central",
+                "value": 24.8
+            },
+            {
+                "label": "Central Highlands",
+                "value": 7.4
+            },
+            {
+                "label": "East",
+                "value": 25.3
+            },
+            {
+                "label": "North",
+                "value": 18.3
+            },
+            {
+                "label": "North East",
+                "value": 7.2
+            },
+            {
+                "label": "South",
+                "value": 11.1
+            },
+            {
+                "label": "South East",
+                "value": 11.9
+            },
+            {
+                "label": "West",
+                "value": 6.7
+            }
+        ]
+    }
+]

@@ -1,0 +1,125 @@
+[
+    {
+        "key": "Strong President",
+        "color": "#005288", 
+        "values": [
+            {   "label": "National Average",
+                "value": 35.7
+            }, 
+            {
+                "label": "Central",
+                "value": 26.1
+            },
+            {
+                "label": "Central Highlands",
+                "value": 13.1
+            },
+            {
+                "label": "East",
+                "value": 49.2
+            },
+            {
+                "label": "North",
+                "value": 39.3
+            },
+            {
+                "label": "North East",
+                "value": 36.5
+            },
+            {
+                "label": "South",
+                "value": 42.4
+            },
+            {
+                "label": "South East",
+                "value": 36.2
+            },
+            {
+                "label": "West",
+                "value": 38.4
+            } 
+        ]
+    },
+    {
+        "key": "Mixed President / Parliament",
+        "color": "#8B4789", 
+        "values": [
+            {   "label": "National Average",
+                "value": 53.3
+            },
+            {
+                "label": "Central",
+                "value": 63.9
+            },            
+            {
+                "label": "Central Highlands",
+                "value": 80.3
+            }, 
+            {
+                "label": "East",
+                "value": 45.7
+            },
+            {
+                "label": "North",
+                "value": 49.2
+            },
+            {
+                "label": "North East",
+                "value": 44.6
+            },
+            {
+                "label": "South",
+                "value": 46.4
+            },
+            {
+                "label": "South East",
+                "value": 54.6
+            },
+            {
+                "label": "West",
+                "value": 51.2
+            }
+        ]
+    },
+    {
+        "key": "Strong Parliament",
+        "color": "#800000", 
+        "values": [
+            {   "label": "National Average",
+                "value": 6.4
+            },
+            {
+                "label": "Central",
+                "value": 4.5
+            },
+            {
+                "label": "Central Highlands",
+                "value": 1.5
+            },
+            {
+                "label": "East",
+                "value": 3.1 
+            },
+            {
+                "label": "North",
+                "value": 4.2
+            },
+            {
+                "label": "North East",
+                "value": 9.4
+            },
+            {
+                "label": "South",
+                "value": 9.3
+            },
+            {
+                "label": "South East",
+                "value": 7.8
+            },
+            {
+                "label": "West",
+                "value": 8.9
+            }
+        ]
+    }
+]

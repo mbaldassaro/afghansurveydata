@@ -1,0 +1,38 @@
+[
+    {
+        "key": "Very Important",
+        "color": "#005288", 
+        "values": [
+            {   "label": "New Voter Registration System", "value": 58.9 },
+            {   "label": "IEC Reform", "value": 70.2 },
+            {   "label": "New Electoral System", "value": 66.8 }
+        ]
+    },
+    {
+        "key": "Important",
+        "color": "#7aa9dd", 
+        "values": [
+            {   "label": "New Voter Registration System", "value": 33.9 },
+            {   "label": "IEC Reform", "value": 24.8 },
+            {   "label": "New Electoral System", "value": 25.5 }
+        ]
+    },
+    {
+        "key": "Not Very Important",
+        "color": "#bc8f8f", 
+        "values": [
+            {   "label": "New Voter Registration System", "value": 4.0 },
+            {   "label": "IEC Reform", "value": 3.2 },
+            {   "label": "New Electoral System", "value": 4.5 }
+        ]
+    },
+    {
+        "key": "Not Important at All",
+        "color": "#800000", 
+        "values": [
+            {   "label": "New Voter Registration System", "value": 1.5 },
+            {   "label": "IEC Reform", "value": 0.7 },
+            {   "label": "New Electoral System", "value": 1.3 }
+        ]
+    }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "key": "Presence of Taliban",
+        "values": [
+            {
+                "label": "Wrong Direction",
+                "value": 17.3
+            }
+        ]
+    },
+    {
+        "key": "Official Corruption",
+        "values": [
+            {
+                "label": "Wrong Direction",
+                "value": 13.6
+            }
+        ]
+    },
+    {
+        "key": "Insecurity",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 13.1
+            }
+        ]
+    },
+    {
+        "key": "Neighboring Countries",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 11.8
+            }
+        ]
+    },
+    {
+        "key": "Poor Economy",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 11.5
+            }
+        ]
+    },
+    {
+        "key": "Poor Governance",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 7.3
+            }
+        ]
+    },
+    {
+        "key": "Innocent Being Killed",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 7.0
+            }
+        ]
+    },
+    {
+        "key": "No Reconstruction",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 6.1
+            }
+        ]
+    },
+    {
+        "key": "Poor Education System",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 5.6
+            }
+        ]
+    },
+    {
+        "key": "Lack of International Assistance",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 4.2
+            }
+        ]
+    },
+        {
+        "key": "Ethnic Divisions",
+        "values": [
+            
+            {
+                "label": "Wrong Direction",
+                "value": 2.5
+            }
+        ]
+        }
+       ]
