@@ -36,6 +36,13 @@ permalink: pretty
 #     coderay_bold_every: 10
 #     coderay_css: style
 
+analytics :
+  provider : google
+  google : 
+      tracking_id : 'UA-60568590-1'
+  getclicky :
+    site_id : 
+
 social:
   - title: twitter
     url: https://twitter.com/democracyintl
